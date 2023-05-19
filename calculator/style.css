@@ -4,7 +4,7 @@
   box-sizing: border-box;         /* Opera/IE 8+ */
   margin: 0;
   padding: 0;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .calc-container {
@@ -65,4 +65,5 @@ div.ffss button:last-child,
 div.ottp button:last-child,
 div.ze button:last-child {
   background-color: #df974c;  
+  color: white;
 }

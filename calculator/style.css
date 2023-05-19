@@ -30,8 +30,16 @@
   border-bottom: none;
 }
 
+.calc-container button:hover {
+  background-color: #ebebeb;
+}
+
+.calc-container button:active {
+  background-color: #bbbcbe;
+}
+
 div.type-resp {
-  color: white;
+  color: #fff;
 }
 
 .clbd, .senm, .ffss, .ottp, .ze {
@@ -65,5 +73,21 @@ div.ffss button:last-child,
 div.ottp button:last-child,
 div.ze button:last-child {
   background-color: #df974c;  
-  color: white;
+  color: #fff;
+}
+
+div.clbd button:last-child:hover,
+div.senm button:last-child:hover,
+div.ffss button:last-child:hover,
+div.ottp button:last-child:hover,
+div.ze button:last-child:hover {
+  background-color: #dfb07e; 
+}
+
+div.clbd button:last-child:active,
+div.senm button:last-child:active,
+div.ffss button:last-child:active,
+div.ottp button:last-child:active,
+div.ze button:last-child:active {
+  background-color: #dd8d37;
 }

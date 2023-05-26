@@ -12,11 +12,7 @@ function init () {
 }
 
 function buttonClick(value) {
-  if (isNaN(parseInt(value))) {
-    handleSymbol(value);
-  } else {
-    handleNumber(value);
-  };
+  isNaN(parseInt(value)) ? handleSymbol(value) : handleNumber(value);
   screen.innerText = buffer;
 }
 
@@ -34,11 +30,7 @@ function handleSymbol(symbol){
       runningTotal = 0;
       break;
     case "←":
-      if (buffer.length === 1) {
-        buffer = "0";
-      } else {
-        buffer = buffer.substring(0, buffer.length - 1);
-      }
+      (buffer.length === 1) ? buffer = "0" : buffer = buffer.substring(0, buffer.length - 1);
       break;
     case "÷":
     case "×":
@@ -50,22 +42,14 @@ function handleSymbol(symbol){
 } 
 
 function handleNumber(numberString){
-  if (buffer === "0") {
-     buffer = numberString;
-  } else {
-    buffer += numberString;
-  };
+  (buffer === "0") ? buffer = numberString : buffer += numberString
 }
 
 function handleMath (value){
   if (buffer === "0") return;
 
   const intBuffer = parseInt(buffer);
-  if (runningTotal === 0) {
-    runningTotal = intBuffer;
-  } else {
-    flushOperation(intBuffer);
-  }
+  runningTotal === 0 ? runningTotal = intBuffer : flushOperation(intBuffer);
   previousOperator = value;
   buffer = "";
 }

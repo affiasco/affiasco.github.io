@@ -5,37 +5,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="calculator.js" defer></script>
   <title>Calculator</title>
 </head>
 <body>
   <div class="calc-container">
-    <div class="type-resp">0</div>
-    <div class="clbd">
-      <button class="clear">&#8557;</button>
-      <button class="back">&#8592;</button>
-      <button class="divide">&#247;</button>
+    <div class="screen">
+      0
     </div>
-    <div class="senm">
-      <button class="svn">&#55;</button>
-      <button class="egt">&#56;</button>
-      <button class="nine">&#57;</button>
-      <button class="mult">&#215;</button>
-    </div>
-    <div class="ffss">
-      <button class="four">&#52;</button>
-      <button class="five">&#53;</button>
-      <button class="six">&#54;</button>
-      <button class="sub">&#8722;</button>
-    </div>
-    <div class="ottp">
-      <button class="one">&#49;</button>
-      <button class="two">&#50;</button>
-      <button class="tre">&#51;</button>
-      <button class="add">&#43;</button>
-    </div>
-    <div class="ze">
-      <button class="zero">&#48;</button>
-      <button class="eq">&#61;</button>
+    
+    <div class="calc-buttons">
+      <div class="clbd">
+        <button class="clear">C</button>
+        <button class="back">←</button>
+        <button class="divide arith">÷</button>
+      </div>
+      <div class="senm">
+        <button class="svn number">7</button>
+        <button class="egt number">8</button>
+        <button class="nine number">9</button>
+        <button class="mult arith">×</button>
+      </div>
+      <div class="ffss">
+        <button class="four number">4</button>
+        <button class="five number">5</button>
+        <button class="six number">6</button>
+        <button class="sub arith">-</button>
+      </div>
+      <div class="ottp">
+        <button class="one number">1</button>
+        <button class="two number">2</button>
+        <button class="tre number">3</button>
+        <button class="add arith">+</button>
+      </div>
+      <div class="ze">
+        <button class="zero number">0</button>
+        <button class="eq">=</button>
+      </div>
     </div>
   </div>
 </body>

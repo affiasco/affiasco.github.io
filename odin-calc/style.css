@@ -16,7 +16,7 @@
 .screen {
   border: 2px solid blue;
   flex-basis: 100%;
-  flex: 2;
+  flex: 1.5;
 }
 
 .calc-row {
@@ -27,6 +27,9 @@
 }
 
 .calc-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 1;
   border: 2px solid yellow;
 }

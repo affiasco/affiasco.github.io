@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.calc-container {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
+  height: 720px;
+  width: 600px;
+  border: 2px solid red;
+}
+
+.screen {
+  border: 2px solid blue;
+  flex-basis: 100%;
+  flex: 2;
+}
+
+.calc-row {
+  display: flex;
+  border: 2px solid green;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.calc-item {
+  flex: 1;
+  border: 2px solid yellow;
+}
+
+.calc-item.eq {
+  flex: 2;
+}

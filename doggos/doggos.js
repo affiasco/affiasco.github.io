@@ -4,7 +4,7 @@ const displayDoggos = document.querySelector(".display-doggos")
 const img = document.querySelector("img");
 const spinner = document.querySelector(".loading-dog");
 
-function populateDropdown() {
+function init() {
   fetch(ALL_DOG_BREEDS_URL)
     .then(function(response) {
       return response.json();
@@ -56,5 +56,5 @@ function updateImage(imageUrl){
   img.replaceWith(img);
 }
   
-populateDropdown();
+init();
 

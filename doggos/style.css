@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+img {
+  height: 500px;
+}
+
+body {
+  background-color: azure;
+}
+
+
+.spin {
+  animation: spin 0.3s ease-in-out infinite;
+}
+
+nav {
+  background-color: antiquewhite;
+  height: 6rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+div.nav-right {
+  text-align: center;
+}
+
+div.nav-right p {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.display-doggos {
+  text-align: center;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.loading-dog {
+  margin-top: 10rem;
+  text-align: center;
+  font-size: 10rem;
+}

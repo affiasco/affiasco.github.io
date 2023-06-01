@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Instrument Serif", serif;
+}
+
+body {
+  background-color: #1b4332;
+}
+
+.page-container {
+  display: flex;
+}
+
+.left-side-container {
+  flex: 2;
+}
+
+.calc-container,
+.results-container {
+  margin: 3rem auto 1rem auto;
+}
+
+.calc-container {
+  background-color: #172a3a;
+  border-radius: 2%;
+  display: flex;
+  flex-direction: column;
+  height: 720px;
+  width: 600px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.calc-buttons {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+}
+
+.screen {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex: 1;
+  margin: 1rem 1.3rem;
+  padding: 0 2rem 1rem 0;
+  background-color: #037971;
+  color: #fff;
+  border-radius: 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 4rem;
+}
+
+.calc-buttons .calc-row {
+  margin: 0 1rem;
+  display: flex;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.calc-item {
+  background-color: #004346;
+  color: #fff;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border: 1.5px solid #004346;
+  border-radius: 1rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  font-size: 2rem;
+}
+
+.calc-words {
+  font-size: 1.4rem;
+}
+
+.calc-item:hover {
+  background-color: #015257;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border: 1.5px solid #004346;
+}
+
+.calc-item:active {
+  background-color: #015e63;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border: 1.5px solid #b9daec;
+}
+
+.calc-row:last-child {
+  margin-bottom: 1rem;
+}
+
+.calc-row:last-child .calc-item {
+  margin-right: 0.5rem;
+}
+
+.calc-item.eq {
+  padding: 0 0.5rem;
+  flex: 2;
+}
+
+.results-container {
+  color: #fff;
+  flex: 1;
+}
+
+.results-container h1 {
+  margin-bottom: 0.5rem;
+  padding-right: 3rem;
+}
+
+.result {
+  padding-left: 2rem;
+  font-size: 2rem;
+}

@@ -34,12 +34,17 @@ body {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+.calc-buttons {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+}
+
 .screen {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  flex-basis: 100%;
-  flex: 1.5;
+  flex: 1;
   margin: 1rem 1.3rem;
   padding: 0 2rem 1rem 0;
   background-color: #037971;
@@ -49,7 +54,7 @@ body {
   font-size: 4rem;
 }
 
-.calc-row {
+.calc-buttons .calc-row {
   margin: 0 1rem;
   display: flex;
   flex-basis: 100%;

@@ -1,10 +1,10 @@
 const screen = document.querySelector(".screen");
-const calcContainer = document.querySelector(".calc-container");
+const calcButtons = document.querySelector(".calc-buttons");
 let display = "0";
 let runningTotal = 0;
 let mathOperator;
 
-calcContainer.addEventListener("click", (event) =>
+calcButtons.addEventListener("click", (event) =>
   buttonClick(event.target.innerText)
 );
 

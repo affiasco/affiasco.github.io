@@ -9,7 +9,7 @@ calcButtons.addEventListener("click", (event) =>
 );
 
 function buttonClick(value) {
-  !isNaN(parseInt(value)) ? manageNumbers(value) : manageSymbols(value);
+  !isNaN(parseFloat(value)) ? manageNumbers(value) : manageSymbols(value);
   screen.innerText = display;
 }
 
@@ -27,49 +27,57 @@ function manageSymbols(symbol) {
     case "-":
     case "÷":
     case "×":
-    case ".":
       doMath(symbol);
       break;
+    case "%":
+      display = display.includes(".")
+        ? `${display * 100} %`
+        : (display += " %");
+      break;
     case "=":
-      if (mathOperator === null) return;
-      operate(parseInt(display));
-      previousOperator = null;
-      display = +runningTotal;
-      runningTotal = 0;
+      equalize();
       break;
     case "DEL":
       if (display === "0") return;
       display =
         display.length > 1 ? display.substring(0, display.length - 1) : "0";
       break;
-    case "%":
+    case ".":
+      display += ".";
+      break;
   }
 }
 
 function doMath(symbol) {
-  const intDisplay = parseInt(display);
+  const floatDisplay = parseFloat(display);
   if (display === "0") return;
 
-  runningTotal === 0 ? (runningTotal = intDisplay) : operate(intDisplay);
+  runningTotal === 0 ? (runningTotal = floatDisplay) : operate(floatDisplay);
   mathOperator = symbol;
   display = "";
 }
 
-function operate(intDisplay) {
+function operate(floatDisplay) {
   switch (mathOperator) {
     case "+":
-      runningTotal += intDisplay;
+      runningTotal += floatDisplay;
       break;
     case "-":
-      runningTotal -= intDisplay;
+      runningTotal -= floatDisplay;
       break;
     case "÷":
-      runningTotal /= intDisplay;
+      runningTotal /= floatDisplay;
       break;
     case "×":
-      runningTotal *= intDisplay;
+      runningTotal *= floatDisplay;
       break;
-    case ".":
-      runningTotal = parseFloat(intDisplay);
   }
+}
+
+function equalize() {
+  if (mathOperator === null) return;
+  operate(parseFloat(display));
+  previousOperator = null;
+  display = +runningTotal;
+  runningTotal = 0;
 }

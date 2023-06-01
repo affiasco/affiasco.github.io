@@ -1,0 +1,21 @@
+@keyframes spin {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes psych {
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 3s ease-in-out infinite;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+

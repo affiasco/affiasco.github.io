@@ -1,5 +1,7 @@
 const screen = document.querySelector(".screen");
 const calcButtons = document.querySelector(".calc-buttons");
+const resultsContainer = document.querySelector(".results-container");
+let completeEquation;
 let display = "0";
 let runningTotal = 0;
 let mathOperator;
@@ -50,6 +52,7 @@ function manageSymbols(symbol) {
 
 function doMath(symbol) {
   const floatDisplay = parseFloat(display);
+  completeEquation = `${display.toString()} ${symbol}`;
   if (display === "0") return;
 
   runningTotal === 0 ? (runningTotal = floatDisplay) : operate(floatDisplay);
@@ -76,8 +79,17 @@ function operate(floatDisplay) {
 
 function equalize() {
   if (mathOperator === null) return;
+  completeEquation += ` ${display} =`;
   operate(parseFloat(display));
   previousOperator = null;
   display = +runningTotal;
   runningTotal = 0;
+  populateRecentResults();
+}
+
+function populateRecentResults() {
+  const newResult = document.createElement("div");
+  newResult.classList.add("result");
+  newResult.innerText = `${completeEquation} ${display}`;
+  resultsContainer.appendChild(newResult);
 }

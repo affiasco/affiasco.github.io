@@ -14,7 +14,7 @@ body {
 }
 
 .left-side-container {
-  flex: 3;
+  flex: 2;
 }
 
 .calc-container,
@@ -112,4 +112,13 @@ body {
 .results-container {
   color: #fff;
   flex: 1;
+}
+
+.results-container h1 {
+  margin-bottom: 0.5rem;
+}
+
+.result {
+  padding-left: 2rem;
+  font-size: 2rem;
 }

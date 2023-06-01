@@ -1,21 +1,53 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 @keyframes spin {
   to {
-    transform: rotateZ(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
-@keyframes psych {
-  100%{
-    filter: hue-rotate(360deg);
-  }
+body {
+  background-color: azure;
 }
+
 
 .spin {
-  animation: spin 3s ease-in-out infinite;
+  animation: spin 0.3s ease-in-out infinite;
+}
+
+nav {
+  background-color: antiquewhite;
+  height: 6rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+div.nav-right {
+  text-align: center;
+}
+
+div.nav-right p {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.display-doggos {
+  text-align: center;
 }
 
 .hidden {
-  display: none;
   visibility: hidden;
+  display: none;
 }
 
+.loading-dog {
+  margin-top: 10rem;
+  text-align: center;
+  font-size: 10rem;
+}

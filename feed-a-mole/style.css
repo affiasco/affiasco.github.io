@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  cursor: url(./static/mole-game/cursor.png), default;
+  height: 100vh;
+}
+
+body,
+.container,
+.snake,
+.mole-holes {
+  width: 100vw;
+}
+
+.container {
+  background: url(./static/mole-game/background.png);
+  background-repeat: no-repeat;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.snake {
+  flex: 1;
+  border: 2px solid pink;
+}
+
+.mole-holes {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+}
+
+.mole-row {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid blue;
+}
+
+.mole {
+  height: 250px;
+  width: 250px;
+  border: 2px solid green;
+}

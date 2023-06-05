@@ -6,6 +6,7 @@
 
 body {
   cursor: url(./static/mole-game/cursor.png), default;
+  background: url(./static/mole-game/background.png);
   height: 100vh;
 }
 
@@ -17,9 +18,8 @@ body,
 }
 
 .container {
-  background: url(./static/mole-game/background.png);
   background-repeat: no-repeat;
-  min-height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,8 +43,21 @@ body,
   border: 2px solid blue;
 }
 
-.mole {
+.mole-hole {
   height: 250px;
   width: 250px;
   border: 2px solid green;
+  background: #000;
+  border-radius: 100%;
+}
+
+.mole {
+  position: relative;
+  right: 35px;
+  top: 5px;
+  margin-right: 100px;
+}
+
+.hidden {
+  display: none;
 }

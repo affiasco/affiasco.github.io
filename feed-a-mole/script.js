@@ -2,21 +2,30 @@ const moles = document.querySelectorAll(".mole");
 const mole = document.querySelector(".mole");
 const body = document.querySelector("body");
 
+let runningScore = 0;
+
 function changeWorm() {
   document.addEventListener("click", (event) =>
-    cursorWorm(event.target.classList[0])
+    cursorWormUpdateScore(event.target.classList[0])
   );
 }
 
-function cursorWorm(classList) {
+function cursorWormUpdateScore(classList) {
   if (classList === "mole") {
     body.style.cursor = "url(./static/mole-game/cursor-worm.png), auto";
+    runningScore += 1;
+    increaseWorm();
   }
 
   setTimeout(
     () => (body.style.cursor = "url(./static/mole-game/cursor.png), auto"),
     1000
   );
+}
+
+function increaseWorm() {
+  const worm = document.querySelector(".worm");
+  worm.style.maxWidth = `${runningScore}0%`;
 }
 
 // Used for Timing //

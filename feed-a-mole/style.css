@@ -6,13 +6,12 @@
 
 body {
   cursor: url(./static/mole-game/cursor.png), default;
-  background: url(./static/mole-game/background.png);
+  background-image: url(./static/mole-game/background.png);
   height: 100vh;
 }
 
 body,
 .container,
-.snake,
 .mole-holes {
   width: 100vw;
 }
@@ -26,27 +25,26 @@ body,
   align-items: center;
 }
 
-.snake {
-  flex: 1;
-  border: 2px solid pink;
+.worm {
+  margin-right: auto;
+  padding-top: 3rem 100rem 0 0;
+  max-width: 0%;
+  overflow: hidden;
 }
 
 .mole-holes {
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
 }
 
 .mole-row {
   display: flex;
   justify-content: space-around;
-  border: 2px solid blue;
 }
 
 .mole-hole {
   height: 250px;
   width: 250px;
-  border: 2px solid green;
   background: #000;
   border-radius: 100%;
 }

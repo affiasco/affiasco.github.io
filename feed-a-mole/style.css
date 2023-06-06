@@ -26,8 +26,8 @@ body,
 }
 
 .worm {
-  margin-right: auto;
-  padding-top: 3rem 100rem 0 0;
+  margin: 0 auto 0 5rem;
+  padding-top: 3rem;
   max-width: 0%;
   overflow: hidden;
 }
@@ -58,4 +58,10 @@ body,
 
 .hidden {
   display: none;
+}
+
+.winner {
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
 }

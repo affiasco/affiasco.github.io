@@ -45,14 +45,12 @@ function showAndHideMole() {
   if (arrHoles.includes(randomNum)) {
     randomNum = getRandomNum();
     hole = `#mole-${randomNum}`;
-    randomMole.classList.remove("hidden");
-    setInterval(() => randomMole.classList.add("hidden"), 2000);
   } else {
     arrHoles.push(randomNum);
-    randomMole.classList.remove("hidden");
-    setInterval(() => randomMole.classList.add("hidden"), 2000);
   }
 
+  randomMole.classList.remove("hidden");
+  setInterval(() => randomMole.classList.add("hidden"), 2000);
   setInterval(() => (arrHoles = []), 20000);
 }
 

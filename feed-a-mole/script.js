@@ -35,20 +35,26 @@ function showWinner(runningScore) {
   }
 }
 
-// Used for Timing //
-// let isHungry = true;
-// let nextTime = Date.now();
+const getRandomNum = () => Math.floor(Math.random() * 11);
+function showAndHideMole() {
+  let arrHoles = [];
+  let randomNum = getRandomNum();
+  let hole = `#mole-${randomNum}`;
+  let randomMole = document.querySelector(hole);
 
-// function next() {
-//   if (Date.now() > nextTime) {
-//     mole.src = isHungry
-//       ? "./static/mole-game/mole-sad.png"
-//       : "./static/mole-game/mole-hungry.png";
-//     isHungry = !isHungry;
-//     nextTime = Date.now() + 1000;
-//   }
-//   requestAnimationFrame(next);
-// }
-// next();
+  if (arrHoles.includes(randomNum)) {
+    randomNum = getRandomNum();
+    hole = `#mole-${randomNum}`;
+    randomMole.classList.remove("hidden");
+    setInterval(() => randomMole.classList.add("hidden"), 2000);
+  } else {
+    arrHoles.push(randomNum);
+    randomMole.classList.remove("hidden");
+    setInterval(() => randomMole.classList.add("hidden"), 2000);
+  }
 
+  setInterval(() => (arrHoles = []), 20000);
+}
+
+setInterval(showAndHideMole, 3000);
 changeWorm();

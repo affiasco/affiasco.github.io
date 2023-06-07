@@ -9,11 +9,15 @@ let runningScore = 0;
 
 function changeWorm() {
   document.addEventListener("click", (event) =>
-    updateScore(event.target.classList)
+    updateScore(event)
   );
 }
 
-function updateScore(classList) {
+function updateScore(event) {
+  const classList = event.target.classList;
+  clicked = event.type;
+
+  console.log(classList, clicked)
   if (classList[0] === "mole" && classList[1] === "king") {
     body.style.cursor = "url(./static/mole-game/cursor-worm.png), auto";
     runningScore += 2;
@@ -59,13 +63,18 @@ function showAndHideMole() {
     randomMole.src = "./static/mole-game/king-mole-hungry.png"
     randomMole.classList.add("king");
     setInterval(() => randomMole.classList.add("hidden"), 2000)
+    setInterval(() => randomMole.src = "./static/mole-game/king-mole-sad.png", 1500)
     king = true;
   } else {
     setInterval(() => randomMole.classList.add("hidden"), 2000)
+    setInterval(() => randomMole.src = "./static/mole-game/mole-sad.png", 1500)
   }
   setInterval(() => (arrHoles = []), 20000);
   setInterval(() => king = false, 12000)
-  
+}
+
+function showButt(randomMole){
+  randomMole.src = "./static/mole-game/mole-sad"
 }
 
 setInterval(showAndHideMole, 3000);

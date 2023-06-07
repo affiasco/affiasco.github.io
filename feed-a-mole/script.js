@@ -8,16 +8,14 @@ let king = true;
 let runningScore = 0;
 
 function changeWorm() {
-  document.addEventListener("click", (event) =>
-    updateScore(event)
-  );
+  document.addEventListener("click", (event) => updateScore(event));
 }
 
 function updateScore(event) {
   const classList = event.target.classList;
   clicked = event.type;
 
-  console.log(classList, clicked)
+  console.log(classList, clicked);
   if (classList[0] === "mole" && classList[1] === "king") {
     body.style.cursor = "url(./static/mole-game/cursor-worm.png), auto";
     runningScore += 2;
@@ -64,32 +62,43 @@ function showAndHideMole() {
     feedMole(randomMole, true);
     king = true;
   } else {
-    randomMole.src = "./static/mole-game/king-mole-hungry.png"
+    randomMole.src = "./static/mole-game/king-mole-hungry.png";
     randomMole.classList.add("king");
-    setInterval(() => randomMole.src = "./static/mole-game/king-mole-sad.png", 1500)
-    setInterval(() => randomMole.src = "./static/mole-game/king-mole-leaving.png", 2000)
+    setInterval(
+      () => (randomMole.src = "./static/mole-game/king-mole-sad.png"),
+      1500
+    );
+    setInterval(
+      () => (randomMole.src = "./static/mole-game/king-mole-leaving.png"),
+      2000
+    );
     king = false;
   }
 
-  if (king){
+  if (king) {
     feedMole(randomMole, false);
   } else {
-    setInterval(() => randomMole.src = "./static/mole-game/mole-sad.png", 1500)
-    setInterval(() => randomMole.src = "./static/mole-game/mole-leaving.png", 2000)
+    setInterval(
+      () => (randomMole.src = "./static/mole-game/mole-sad.png"),
+      1500
+    );
+    setInterval(
+      () => (randomMole.src = "./static/mole-game/mole-leaving.png"),
+      2000
+    );
   }
-    
-  setInterval(() => randomMole.classList.add("hidden"), 2500)
+
+  setInterval(() => randomMole.classList.add("hidden"), 2500);
   setInterval(() => (arrHoles = []), 20000);
-  setInterval(() => king = false, 12000)
-  }
+  setInterval(() => (king = false), 12000);
+}
 
 function feedMole(randomMole) {
   randomMole.addEventListener("click", () => {
     if (!king) {
       randomMole.src = "./static/mole-game/king-mole-fed.png";
-    } else
-      randomMole.src = "./static/mole-game/mole-fed.png";
-  })
+    } else randomMole.src = "./static/mole-game/mole-fed.png";
+  });
 }
 
 setInterval(showAndHideMole, 3000);

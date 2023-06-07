@@ -62,12 +62,14 @@ function showAndHideMole() {
   if (!king) {
     randomMole.src = "./static/mole-game/king-mole-hungry.png"
     randomMole.classList.add("king");
-    setInterval(() => randomMole.classList.add("hidden"), 2000)
     setInterval(() => randomMole.src = "./static/mole-game/king-mole-sad.png", 1500)
+    setInterval(() => randomMole.src = "./static/mole-game/king-mole-leaving.png", 2000)
+    setInterval(() => randomMole.classList.add("hidden"), 2500)
     king = true;
   } else {
-    setInterval(() => randomMole.classList.add("hidden"), 2000)
     setInterval(() => randomMole.src = "./static/mole-game/mole-sad.png", 1500)
+    setTimeout(() => randomMole.src = "./static/mole-game/mole-leaving.png", 2000)
+    setInterval(() => randomMole.classList.add("hidden"), 2500)
   }
   setInterval(() => (arrHoles = []), 20000);
   setInterval(() => king = false, 12000)

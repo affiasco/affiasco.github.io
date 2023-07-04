@@ -39,17 +39,30 @@
 .confirmation-container {
   border: 3px solid orange;
   flex: 1;
+  padding: 0 3rem;
 }
 
 .overview-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
   font-size: 2rem;
 }
 
 .overview-container p {
   margin: 1.8rem 0;
-  padding: 0 3rem;
+}
+
+.confirmation-container button {
+  font-size: 1.3rem;
+  margin: 2rem 0;
+  padding: 1rem 5rem;
+}
+
+.confirmation-container p {
+  font-size: 1.3rem;
+}
+
+.confirmation-container a {
+  text-decoration: none;
 }

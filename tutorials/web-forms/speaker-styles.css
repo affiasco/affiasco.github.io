@@ -94,6 +94,13 @@ form-row input[type="text"]:invalid,
   float: left;
 }
 
+.form-row select {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+  -webkit-appearance: none;
+}
+
 @media only screen and (min-width: 700px) {
   .speaker-form-header,
   .speaker-form {

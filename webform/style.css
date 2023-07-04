@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parent-container {
+  border: 3px solid black;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.page-left-container {
+  border: 3px solid red;
+  display: flex;
+  flex-basis: 40%;
+  width: 100vw;
+}
+
+.page-right-container {
+  border: 3px solid red;
+  flex-basis: 60%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-container,
+.form-container,
+.confirmation-container {
+  border: 3px solid orange;
+  flex: 1;
+}

@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding: 1em;
+  margin: 0;
+  width: 500px;
+}
+
+h2 {
+  text-align: right;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: 100%;
+  width: 150px;
+  padding: 0;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+/* input {
+  margin-left: 10px;
+}
+
+input#e-mail {
+  margin-left: 74px;
+}
+
+input#website {
+  margin-left: 57px;
+}
+
+select {
+  margin-left: 22px;
+} */

@@ -99,6 +99,24 @@ form-row input[type="text"]:invalid,
   padding: 5px;
   font-size: 14px;
   -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-row textarea {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  border: 1px solid #d6d9dc;
+  border-radius: 3px;
+  min-height: 200px;
+  margin-bottom: 10px;
+  padding: 7px;
+  resize: none;
+}
+
+.form-row .instructions {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 30px;
 }
 
 @media only screen and (min-width: 700px) {
@@ -140,5 +158,9 @@ form-row input[type="text"]:invalid,
 
   .legacy-form-row legend {
     float: left;
+  }
+
+  .form-row .instructions {
+    margin-left: 120px;
   }
 }

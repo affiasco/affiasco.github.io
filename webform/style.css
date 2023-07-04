@@ -18,7 +18,15 @@
   width: 100vw;
 }
 
+.logo-div {
+  border: 3px solid green;
+  margin-top: 11rem;
+  height: 15%;
+  width: 100%;
+}
+
 .page-right-container {
+  font-family: "Nanum Gothic Coding", monospace;
   border: 3px solid red;
   flex-basis: 60%;
   width: 100vw;
@@ -31,4 +39,17 @@
 .confirmation-container {
   border: 3px solid orange;
   flex: 1;
+}
+
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  font-size: 2rem;
+}
+
+.overview-container p {
+  margin: 1.8rem 0;
+  padding: 0 3rem;
 }

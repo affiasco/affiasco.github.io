@@ -24,7 +24,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-  margin-top: 7.5rem;
+  margin-top: 7.75rem;
   height: 18%;
   width: 100%;
   color: #fff;
@@ -52,6 +52,11 @@
   padding: 0 3rem;
 }
 
+.overview-container,
+.confirmation-container {
+  background-color: #00bbc9;
+}
+
 .overview-container {
   display: flex;
   flex-direction: column;
@@ -61,6 +66,10 @@
 
 .overview-container p {
   margin: 1.8rem 0;
+}
+
+.form-container {
+  background-color: #ff974f;
 }
 
 .form-container form {
@@ -94,9 +103,22 @@
 }
 
 .confirmation-container button {
-  font-size: 1.3rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
   margin: 2rem 0;
-  padding: 1rem 5rem;
+  padding: 1.5rem 5rem;
+  background-color: #ff974f;
+  color: #fff;
+  font-weight: 800;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.confirmation-container button:hover {
+  border: none;
+  background-color: #fff;
+  color: #ff974f;
+  cursor: pointer;
 }
 
 .confirmation-container p {
@@ -105,4 +127,11 @@
 
 .confirmation-container a {
   text-decoration: none;
+  color: #fff;
+  font-weight: 1200;
+}
+
+.confirmation-container a:hover {
+  text-decoration: none;
+  color: #ff974f;
 }

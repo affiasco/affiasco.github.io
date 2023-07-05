@@ -5,29 +5,40 @@
 }
 
 .parent-container {
-  border: 3px solid black;
   display: flex;
   width: 100vw;
   height: 100vh;
 }
 
 .page-left-container {
-  border: 3px solid red;
+  background-image: url("images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-basis: 40%;
   width: 100vw;
 }
 
 .logo-div {
-  border: 3px solid green;
-  margin-top: 11rem;
-  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 7.5rem;
+  height: 18%;
   width: 100%;
+  color: #fff;
+  font-family: "Amatic SC", cursive;
+  font-size: 6rem;
+  letter-spacing: 0.5rem;
+}
+
+.logo-div img {
+  height: 90%;
 }
 
 .page-right-container {
   font-family: "Nanum Gothic Coding", monospace;
-  border: 3px solid red;
   flex-basis: 60%;
   width: 100vw;
   display: flex;
@@ -37,7 +48,6 @@
 .overview-container,
 .form-container,
 .confirmation-container {
-  border: 3px solid orange;
   flex: 1;
   padding: 0 3rem;
 }

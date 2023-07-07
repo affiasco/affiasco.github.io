@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parent-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.page-left-container {
+  background-image: url("images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-basis: 40%;
+  width: 100vw;
+}
+
+.logo-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 7.75rem;
+  height: 18%;
+  width: 100%;
+  color: #fff;
+  font-family: "Amatic SC", cursive;
+  font-size: 6rem;
+  letter-spacing: 0.5rem;
+}
+
+.logo-div img {
+  height: 90%;
+}
+
+.page-right-container {
+  font-family: "Nanum Gothic Coding", monospace;
+  flex-basis: 60%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-container,
+.form-container,
+.confirmation-container {
+  flex: 1;
+  padding: 0 3rem;
+}
+
+.overview-container,
+.confirmation-container {
+  background-color: #00bbc9;
+}
+
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 2rem;
+}
+
+.overview-container p {
+  margin: 1.8rem 0;
+}
+
+.form-container {
+  background-color: #ff974f;
+}
+
+.form-container form {
+  display: flex;
+  justify-self: center;
+  padding: 2rem 0;
+
+  font-size: 1.3rem;
+}
+
+.form-container form section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.form-container form label {
+  font-weight: 600;
+}
+
+.form-container form input {
+  font-size: 1.3rem;
+  width: 22rem;
+  height: 2.5rem;
+  margin: 0.3rem 0 1.2rem 0;
+}
+
+.form-container h1 {
+  margin-top: 1rem;
+}
+
+.confirmation-container button {
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  padding: 1.5rem 5rem;
+  background-color: #ff974f;
+  color: #fff;
+  font-weight: 800;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.confirmation-container button:hover {
+  border: none;
+  background-color: #fff;
+  color: #ff974f;
+  cursor: pointer;
+}
+
+.confirmation-container p {
+  font-size: 1.3rem;
+}
+
+.confirmation-container a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 1200;
+}
+
+.confirmation-container a:hover {
+  text-decoration: none;
+  color: #ff974f;
+}

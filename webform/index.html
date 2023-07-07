@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap"
+      rel="stylesheet"
+    />
+    <!-- END FONT -->
+  </head>
+  <body>
+    <div class="parent-container">
+      <div class="page-left-container">
+        <div class="logo-div">
+          <!-- Photo by <a href="https://unsplash.com/pt-br/@nasa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NASA</a> on <a href="https://unsplash.com/photos/rTZW4f02zY8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+          -->
+          <img src="images/odin-lined.png" alt="odin-project-logo" />
+          ODIN
+        </div>
+      </div>
+      <div class="page-right-container">
+        <div class="overview-container">
+          <p>
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams
+            <br />
+            Sign up <em><strong>now</strong></em> to get started.
+          </p>
+          <p>
+            You <em><strong>know</strong></em> you want to
+          </p>
+        </div>
+        <div class="form-container">
+          <h1>Let's do this!</h1>
+          <form action="example.com/path" method="post">
+            <section class="left-form">
+              <label for="first_name">FIRST NAME</label>
+              <input type="text" id="first_name" />
+
+              <label for="email">EMAIL</label>
+              <input type="email" id="email" />
+
+              <label for="pwd">PASSWORD</label>
+              <input type="password" id="pwd" />
+            </section>
+
+            <section class="left-form">
+              <label for="last_name">LAST NAME</label>
+              <input type="text" id="last_name" />
+
+              <label for="tel">PHONE NUMBER</label>
+              <input type="tel" id="tel" />
+
+              <label for="conf-pwd">CONFIRM PASSWORD</label>
+              <input type="password" id="conf-pwd" />
+            </section>
+          </form>
+        </div>
+        <div class="confirmation-container">
+          <button>Create Account</button>
+          <p>Already have an account? <a href="#">Log in</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

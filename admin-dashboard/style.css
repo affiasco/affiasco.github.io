@@ -20,6 +20,54 @@
   grid-area: header;
 }
 
+.search {
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr;
+  align-items: center;
+  /* gap: 2rem; */
+}
+
+.search-top {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+
+.search-bottom {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-self: end;
+}
+
+.search-bottom-user-info {
+  display: grid;
+  grid-template-areas:
+    "user-img greeting"
+    "user-img user-tag";
+}
+
+.search-bottom-user-info > svg {
+  grid-area: user-img;
+}
+
+.search-bottom-user-info > p.search-greeting {
+  grid-area: greeting;
+}
+
+.search-bottom-user-info > p.search-usertag {
+  grid-area: user-tag;
+}
+
+.search-bottom-btns {
+  border: 1px solid green;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+}
+
+.search-bottom-btns > .search-bottom-btn {
+  padding: 0.4rem 2rem;
+}
+
 .sidebar {
   border: 2px solid black;
   background-color: lightblue;

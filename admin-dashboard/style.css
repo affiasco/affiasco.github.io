@@ -58,7 +58,6 @@
 }
 
 .search-bottom-btns {
-  border: 1px solid green;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
@@ -118,4 +117,52 @@ svg {
   border: 2px solid black;
   background-color: lightgrey;
   grid-area: projects;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.projects-your-projs {
+  display: grid;
+  grid-template: 0.5fr 1fr 1fr 1fr /1fr 1fr;
+  grid-template-areas:
+    ". ."
+    "proj1 proj2"
+    "proj3 proj4"
+    "proj5 proj6";
+  gap: 10px;
+  padding: 10px;
+  place-items: stretch;
+}
+
+.your-proj {
+  grid-area: proj;
+  display: grid;
+  place-items: center;
+}
+
+[data-proj="1"] {
+  grid-area: proj1;
+}
+
+[data-proj="2"] {
+  grid-area: proj2;
+}
+[data-proj="3"] {
+  grid-area: proj3;
+}
+[data-proj="4"] {
+  grid-area: proj4;
+}
+[data-proj="5"] {
+  grid-area: proj5;
+}
+[data-proj="6"] {
+  grid-area: proj6;
+}
+
+.projects-announce {
+  border: 2px solid blue;
+  display: grid;
+  grid-template-rows: 0.1fr 2fr 0.1fr 2fr;
+  place-items: center;
 }

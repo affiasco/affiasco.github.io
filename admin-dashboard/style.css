@@ -114,76 +114,24 @@ svg {
 }
 
 .projects {
-  border: 2px solid black;
-  background-color: lightgrey;
-  grid-area: projects;
   display: grid;
-  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
   grid-template-areas:
-    "proj proj ann-tr"
-    "proj proj ann-tr"
-    "proj proj ann-tr";
+    "headings headings"
+    "projects anntr";
+}
+
+.headings {
+  grid-area: headings;
 }
 
 .projects-your-projs {
+  grid-area: projects;
   display: grid;
-  grid-template: 0.5fr 1fr 1fr 1fr /1fr 1fr;
-  grid-template-areas:
-    ". ."
-    "proj1 proj2"
-    "proj3 proj4"
-    "proj5 proj6";
-  gap: 20px;
-  padding: 10px;
-  place-items: stretch;
-  grid-area: proj;
-}
-
-.projects-your-projs,
-.projects-announce {
-  margin-bottom: 3rem;
-}
-
-.your-proj,
-.announce,
-.trending {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 1rem;
-  align-self: stretch;
-}
-
-.your-proj {
-  display: grid;
-  place-items: center;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr;
 }
 
 .projects-announce {
-  grid-area: ann-tr;
-}
-
-[data-proj="1"] {
-  grid-area: proj1;
-}
-
-[data-proj="2"] {
-  grid-area: proj2;
-}
-[data-proj="3"] {
-  grid-area: proj3;
-}
-[data-proj="4"] {
-  grid-area: proj4;
-}
-[data-proj="5"] {
-  grid-area: proj5;
-}
-[data-proj="6"] {
-  grid-area: proj6;
-}
-
-.projects-announce {
+  grid-area: anntr;
   display: grid;
-  grid-template-rows: 0.1fr 2fr 0.1fr 2fr;
-  place-items: center;
+  grid-template-rows: 1.5fr 0.5fr 1.5fr;
 }

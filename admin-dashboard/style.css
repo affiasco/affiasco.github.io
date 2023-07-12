@@ -118,7 +118,11 @@ svg {
   background-color: lightgrey;
   grid-area: projects;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  grid-template-areas:
+    "proj proj ann-tr"
+    "proj proj ann-tr"
+    "proj proj ann-tr";
 }
 
 .projects-your-projs {
@@ -129,15 +133,33 @@ svg {
     "proj1 proj2"
     "proj3 proj4"
     "proj5 proj6";
-  gap: 10px;
+  gap: 20px;
   padding: 10px;
   place-items: stretch;
+  grid-area: proj;
+}
+
+.projects-your-projs,
+.projects-announce {
+  margin-bottom: 3rem;
+}
+
+.your-proj,
+.announce,
+.trending {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  align-self: stretch;
 }
 
 .your-proj {
-  grid-area: proj;
   display: grid;
   place-items: center;
+}
+
+.projects-announce {
+  grid-area: ann-tr;
 }
 
 [data-proj="1"] {
@@ -161,7 +183,6 @@ svg {
 }
 
 .projects-announce {
-  border: 2px solid blue;
   display: grid;
   grid-template-rows: 0.1fr 2fr 0.1fr 2fr;
   place-items: center;

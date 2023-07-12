@@ -114,7 +114,9 @@ svg {
 }
 
 .projects {
+  background-color: lightgrey;
   display: grid;
+  grid-template-rows: 0.1fr 1fr;
   grid-template-areas:
     "headings headings"
     "projects anntr";
@@ -122,16 +124,43 @@ svg {
 
 .headings {
   grid-area: headings;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: 0.5rem;
+}
+
+.headings > h1 {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.headings > h1:nth-child(1) {
+  border: 2px solid blue;
+}
+
+.headings > h1:nth-child(2) {
+  border: 2px solid red;
+  margin-right: 22rem;
 }
 
 .projects-your-projs {
   grid-area: projects;
   display: grid;
+  gap: 1rem;
   grid-template: 1fr 1fr 1fr / 1fr 1fr;
+}
+
+.your-proj,
+.announce,
+.trending {
+  background-color: #fff;
+  padding: 1rem;
 }
 
 .projects-announce {
   grid-area: anntr;
   display: grid;
   grid-template-rows: 1.5fr 0.5fr 1.5fr;
+  margin-left: 1rem;
 }

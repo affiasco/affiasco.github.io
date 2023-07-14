@@ -24,7 +24,6 @@
   display: grid;
   grid-template: 1fr 1fr 1fr / 1fr;
   align-items: center;
-  /* gap: 2rem; */
 }
 
 .search-top {
@@ -117,6 +116,7 @@ svg {
   background-color: lightgrey;
   display: grid;
   grid-template-rows: 0.1fr 1fr;
+  grid-template-columns: 3fr 1fr;
   grid-template-areas:
     "headings headings"
     "projects anntr";
@@ -136,7 +136,7 @@ svg {
 }
 
 .headings > h1:nth-child(2) {
-  margin-right: 21rem;
+  margin-right: 7.5rem;
 }
 
 .projects-your-projs {
@@ -144,14 +144,19 @@ svg {
   display: grid;
   gap: 1rem;
   grid-template: 1fr 1fr 1fr / 1fr 1fr;
-  margin: 1rem;
+  margin: 1rem 2rem 2rem 2rem;
 }
 
 .your-proj,
 .announce,
 .trending {
   background-color: #fff;
+  border-radius: 10px;
   padding: 1rem;
+}
+
+.your-proj {
+  border-left: 0.7rem solid orange;
 }
 
 .heading-trending {
@@ -164,5 +169,5 @@ svg {
   grid-area: anntr;
   display: grid;
   grid-template-rows: 1.5fr 0.5fr 1.5fr;
-  margin: 1rem 1rem 1rem 0;
+  margin: 1rem 2rem 2rem 0;
 }

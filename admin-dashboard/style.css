@@ -62,6 +62,7 @@
   font-size: 1.4rem;
   font-weight: bolder;
 }
+
 .search-bottom {
   grid-area: search-bottom;
   display: grid;
@@ -125,19 +126,22 @@
   justify-self: start;
 }
 
-.prefs {
-  display: grid;
-  place-items: center;
-}
-
 .prefs-options > li,
 .settings-options > li {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
   display: grid;
   align-items: center;
-  justify-items: center;
+  justify-items: start;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  font-size: 1.5rem;
   list-style-type: none;
+}
+
+.prefs-options > li > svg,
+.settings-options > li > svg {
+  position: relative;
+  left: 2.1rem;
+  width: 2rem;
 }
 
 svg {

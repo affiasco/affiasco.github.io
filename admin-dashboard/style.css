@@ -198,6 +198,22 @@ svg {
 
 .your-proj {
   border-left: 0.7rem solid #0284c7;
+  display: grid;
+}
+
+.your-proj > h1 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-bottom: -1.3rem;
+}
+
+.your-proj > .post-iteraction-svgs {
+  margin-top: 0.5rem;
+  justify-self: end;
+}
+
+.your-proj > .post-iteraction-svgs > svg {
+  margin-right: 0.75rem;
 }
 
 .heading-trending {
@@ -242,4 +258,32 @@ svg {
 .announce-section > hr {
   margin-top: 1.2rem;
   width: 100%;
+}
+
+.trending-section {
+  height: 100%;
+  width: 100%;
+  font-size: 1.2rem;
+  display: grid;
+  grid-template-areas:
+    "img handle"
+    "img catch";
+  align-items: center;
+}
+
+.trending-section > svg {
+  grid-area: img;
+  margin-right: -3rem;
+  width: 3rem;
+}
+
+.trending-section > .handle {
+  text-indent: 0;
+  grid-area: handle;
+}
+
+.trending-section > .catch {
+  text-indent: 0;
+  margin-top: -1rem;
+  grid-area: catch;
 }

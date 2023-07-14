@@ -209,3 +209,33 @@ svg {
   grid-template-rows: 1.5fr 0.5fr 1.5fr;
   margin: 1rem 2rem 2rem 0;
 }
+
+.trending,
+.announce {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.announce {
+  text-align: center;
+}
+
+.announce-section {
+  width: 90%;
+}
+
+.announce-section > h2 {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  margin: 0.4rem 0;
+}
+.announce-section > h2,
+.announce-section > p {
+  text-align: left;
+}
+.announce-section > hr {
+  margin-top: 1.2rem;
+  width: 100%;
+}

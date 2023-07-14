@@ -8,7 +8,7 @@
   font-family: "Barlow", sans-serif;
   height: 100vh;
   display: grid;
-  grid-template: 1fr 3fr / 1fr 3fr;
+  grid-template: 0.5fr 3fr / 1fr 3fr;
   grid-template-areas:
     "sidebar header"
     "sidebar projects";
@@ -132,16 +132,11 @@ svg {
 
 .headings > h1 {
   display: inline-block;
-  margin-bottom: 0.5rem;
-}
-
-.headings > h1:nth-child(1) {
-  border: 2px solid blue;
+  margin-left: 1rem;
 }
 
 .headings > h1:nth-child(2) {
-  border: 2px solid red;
-  margin-right: 22rem;
+  margin-right: 21rem;
 }
 
 .projects-your-projs {
@@ -149,6 +144,7 @@ svg {
   display: grid;
   gap: 1rem;
   grid-template: 1fr 1fr 1fr / 1fr 1fr;
+  margin: 1rem;
 }
 
 .your-proj,
@@ -158,9 +154,15 @@ svg {
   padding: 1rem;
 }
 
+.heading-trending {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
 .projects-announce {
   grid-area: anntr;
   display: grid;
   grid-template-rows: 1.5fr 0.5fr 1.5fr;
-  margin-left: 1rem;
+  margin: 1rem 1rem 1rem 0;
 }

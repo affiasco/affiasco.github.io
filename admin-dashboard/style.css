@@ -8,7 +8,7 @@
   font-family: "Barlow", sans-serif;
   height: 100vh;
   display: grid;
-  grid-template: 0.5fr 3fr / 1fr 3fr;
+  grid-template: 0.5fr 3fr / 1fr 4fr;
   grid-template-areas:
     "sidebar header"
     "sidebar projects";
@@ -16,7 +16,7 @@
 
 .header {
   padding: 0.5rem 2rem;
-  background-color: white;
+  background-color: #eff6ff;
   grid-area: header;
 }
 
@@ -26,6 +26,7 @@
   grid-template-areas:
     "search-top"
     "search-bottom";
+  margin-top: 1rem;
 }
 
 .search-top {
@@ -48,7 +49,7 @@
   height: 2.2rem;
   border: none;
   border-radius: 25px;
-  background-color: lightgrey;
+  background-color: #cbd5e1;
   width: 100%;
 }
 
@@ -88,7 +89,7 @@
   padding: 0.6rem 2rem;
   border: none;
   border-radius: 25px;
-  background-color: blue;
+  background-color: #1e40af;
   color: white;
 }
 
@@ -101,7 +102,7 @@
 }
 
 .sidebar {
-  background-color: lightblue;
+  background-color: #dbeafe;
   grid-area: sidebar;
   display: grid;
   grid-template-rows: 1fr 3fr 3fr;
@@ -151,7 +152,7 @@ svg {
 }
 
 .projects {
-  background-color: lightgrey;
+  background-color: #94a3b8;
   display: grid;
   grid-template-rows: 0.1fr 1fr;
   grid-template-columns: 3fr 1fr;
@@ -166,6 +167,7 @@ svg {
   justify-content: space-between;
   align-items: flex-end;
   margin-left: 0.5rem;
+  color: #1c1917;
 }
 
 .headings > h1 {
@@ -191,10 +193,11 @@ svg {
   background-color: #fff;
   border-radius: 10px;
   padding: 1rem;
+  box-shadow: 0px 15px 10px -15px #111, 15px 0px 10px -15px #111;
 }
 
 .your-proj {
-  border-left: 0.7rem solid orange;
+  border-left: 0.7rem solid #0284c7;
 }
 
 .heading-trending {
@@ -235,6 +238,7 @@ svg {
 .announce-section > p {
   text-align: left;
 }
+
 .announce-section > hr {
   margin-top: 1.2rem;
   width: 100%;

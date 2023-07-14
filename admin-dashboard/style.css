@@ -15,45 +15,64 @@
 }
 
 .header {
-  border: 2px solid black;
+  padding: 0.5rem 2rem;
   background-color: white;
   grid-area: header;
 }
 
 .search {
   display: grid;
-  grid-template: 1fr 1fr 1fr / 1fr;
-  align-items: center;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "search-top"
+    "search-bottom";
 }
 
 .search-top {
+  grid-area: search-top;
   display: grid;
   grid-template-columns: 4fr 1fr;
+  margin-bottom: 1.5rem;
 }
 
-.search-bottom {
+.search-top-left {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 0.2fr 1fr;
+  justify-items: start;
+  align-items: center;
+}
+
+.search-top-left > input {
+  position: relative;
+  right: 8rem;
+  height: 2.2rem;
+  border: none;
+  border-radius: 25px;
+  background-color: lightgrey;
+  width: 100%;
+}
+
+.search-top-right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-top-right > p {
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+.search-bottom {
+  grid-area: search-bottom;
+  display: grid;
+  grid-template-columns: 3fr 1.2fr;
   align-self: end;
 }
 
 .search-bottom-user-info {
-  display: grid;
-  grid-template-areas:
-    "user-img greeting"
-    "user-img user-tag";
-}
-
-.search-bottom-user-info > svg {
-  grid-area: user-img;
-}
-
-.search-bottom-user-info > p.search-greeting {
-  grid-area: greeting;
-}
-
-.search-bottom-user-info > p.search-usertag {
-  grid-area: user-tag;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
 }
 
 .search-bottom-btns {
@@ -63,11 +82,24 @@
 }
 
 .search-bottom-btns > .search-bottom-btn {
-  padding: 0.4rem 2rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  padding: 0.6rem 2rem;
+  border: none;
+  border-radius: 25px;
+  background-color: blue;
+  color: white;
+}
+
+.search-greeting > p:first-child {
+  font-size: 1.2rem;
+}
+
+.search-greeting > p:last-child {
+  font-size: 1.7rem;
 }
 
 .sidebar {
-  border: 2px solid black;
   background-color: lightblue;
   grid-area: sidebar;
   display: grid;
@@ -110,6 +142,8 @@
 
 svg {
   width: 2rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .projects {

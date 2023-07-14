@@ -10,3 +10,4 @@ My projects:
 - [Image Gallery](https://affiasco.github.io/femasters-bootcamp/image-gallery)
 - [Landing Page](https://affiasco.github.io/landing-page/)
 - [Recipes](https://affiasco.github.io/recipes/)
+- [Admin Dashboard](https://affiasco.github.io/admin-dashboard)

@@ -12,7 +12,7 @@ class Book {
   info() {
     return `<p>${this.title}</p> <p>${this.author} </p> <p> ${
       this.pages
-    } pages </p> <p> ${this.read ? "read" : "not read"}</p>`;
+    } pages </p> <button> ${this.read ? "read" : "not read"}</button>`;
   }
 }
 
@@ -22,16 +22,20 @@ function addBookToLibrary(bookObj) {
 
 function showBooksFromLibrary(myLibrary) {
   myLibrary.forEach((book) => {
-    const newBook = document.createElement("div");
-    const bookInfo = document.createElement("div");
-    const bookDetails = document.createElement("p");
-    newBook.classList.add("book-card");
-    bookInfo.classList.add("book-info");
-    bookDetails.classList.add("book-details");
-    myLibraryOnPage.appendChild(newBook);
-    newBook.appendChild(bookInfo);
-    bookInfo.innerHTML = book.info();
+    createBookContainer(book);
   });
+}
+
+function createBookContainer(book) {
+  const newBook = document.createElement("div");
+  const bookInfo = document.createElement("div");
+  const bookDetails = document.createElement("p");
+  newBook.classList.add("book-card");
+  bookInfo.classList.add("book-info");
+  bookDetails.classList.add("book-details");
+  myLibraryOnPage.appendChild(newBook);
+  newBook.appendChild(bookInfo);
+  bookInfo.innerHTML = book.info();
 }
 
 function addNewBook() {

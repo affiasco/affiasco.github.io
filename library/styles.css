@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav,
+.mylibrary {
+  padding: 2rem;
+}
+
+.mylibrary {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.book-card {
+  border: 2px solid red;
+  min-width: 20%;
+  padding: 2rem;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}

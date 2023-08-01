@@ -34,6 +34,14 @@ function showBooksFromLibrary(myLibrary) {
   });
 }
 
+function addNewBook() {
+  document
+    .querySelector(".add-book")
+    .addEventListener("click", function (event) {
+      console.log(event);
+    });
+}
+
 // --- this section will go soon ---
 faket = new Book("fakeT", "FakeA", 36, true);
 faket2 = new Book("fakeT2", "FakeA2", 100, false);
@@ -49,3 +57,4 @@ addBookToLibrary(faket5);
 // --- end ---
 
 showBooksFromLibrary(myLibrary);
+addNewBook();

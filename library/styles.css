@@ -9,11 +9,28 @@ nav,
   padding: 2rem;
 }
 
+.page-container {
+  border: 2px solid black;
+  text-align: center;
+}
+
+.add-book {
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+  border: none;
+}
+
+.add-book:hover {
+  cursor: pointer;
+}
+
 .mylibrary {
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
+  border: 2px solid blue;
 }
 
 .book-card {

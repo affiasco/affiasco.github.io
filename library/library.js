@@ -1,5 +1,6 @@
 const myLibrary = [];
 const myLibraryOnPage = document.querySelector(".mylibrary");
+const modalContainer = document.querySelector(".modal-container");
 
 class Book {
   constructor(title, author, pages, read) {
@@ -22,11 +23,11 @@ function addBookToLibrary(bookObj) {
 
 function showBooksFromLibrary(myLibrary) {
   myLibrary.forEach((book) => {
-    createBookContainer(book);
+    createBookInfo(book);
   });
 }
 
-function createBookContainer(book) {
+function createBookInfo(book) {
   const newBook = document.createElement("div");
   const bookInfo = document.createElement("div");
   const bookDetails = document.createElement("p");
@@ -38,12 +39,16 @@ function createBookContainer(book) {
   bookInfo.innerHTML = book.info();
 }
 
-function addNewBook() {
+function openNewBookModal() {
   document
     .querySelector(".add-book")
-    .addEventListener("click", function (event) {
-      console.log(event);
-    });
+    .addEventListener("click", () => (modalContainer.style.display = "block"));
+}
+
+function closeBookModal() {
+  document
+    .querySelector(".close-modal")
+    .addEventListener("click", () => (modalContainer.style.display = "none"));
 }
 
 // --- this section will go soon ---
@@ -61,4 +66,5 @@ addBookToLibrary(faket5);
 // --- end ---
 
 showBooksFromLibrary(myLibrary);
-addNewBook();
+openNewBookModal();
+closeBookModal();

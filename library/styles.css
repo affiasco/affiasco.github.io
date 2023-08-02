@@ -14,6 +14,46 @@ nav,
   text-align: center;
 }
 
+.modal-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:active {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 20% auto;
+  padding: 1rem;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.modal-content > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .add-book {
   font-size: 2rem;
   padding: 1rem;

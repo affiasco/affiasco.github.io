@@ -51,6 +51,19 @@ function closeBookModal() {
     .addEventListener("click", () => (modalContainer.style.display = "none"));
 }
 
+const bookValues = {};
+function getBookData() {
+  const form = document.querySelector(".modal-form");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    for (item of formData) {
+      bookValues[item[0]] = item[1];
+    }
+  });
+}
+
 // --- this section will go soon ---
 faket = new Book("fakeT", "FakeA", 36, true);
 faket2 = new Book("fakeT2", "FakeA2", 100, false);
@@ -68,3 +81,4 @@ addBookToLibrary(faket5);
 showBooksFromLibrary(myLibrary);
 openNewBookModal();
 closeBookModal();
+getBookData();

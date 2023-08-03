@@ -5,14 +5,14 @@ const form = document.querySelector(".modal-form");
 
 class Book {
   constructor(bookValues) {
-    (this.author = bookValues.author),
-      (this.title = bookValues.title),
+    (this.title = bookValues.title),
+      (this.author = bookValues.author),
       (this.pages = bookValues.pages),
       (this.read = bookValues.read);
   }
 
   info() {
-    return `<p>${this.title}</p> <p>${this.author} </p> <p> ${
+    return `<p>${this.author}</p> <p>${this.title} </p> <p> ${
       this.pages
     } pages </p> <button> ${this.read ? "read" : "not read"}</button>`;
   }

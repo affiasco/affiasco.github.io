@@ -17,6 +17,13 @@ class Book {
   }
 }
 
+function init() {
+  showBooksFromLibrary(myLibrary);
+  openNewBookModal();
+  closeBookModal();
+  getBookData();
+}
+
 function addBookToLibrary(bookObj) {
   myLibrary.push(bookObj);
 }
@@ -78,7 +85,4 @@ addBookToLibrary(faket4);
 addBookToLibrary(faket5);
 // --- end ---
 
-showBooksFromLibrary(myLibrary);
-openNewBookModal();
-closeBookModal();
-getBookData();
+init();

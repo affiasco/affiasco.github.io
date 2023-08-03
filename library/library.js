@@ -1,4 +1,3 @@
-let bookValues = {};
 const myLibrary = [];
 const myLibraryOnPage = document.querySelector(".mylibrary");
 const modalContainer = document.querySelector(".modal-container");
@@ -20,22 +19,17 @@ class Book {
 }
 
 function init() {
-  showBooksFromLibrary(myLibrary);
   openNewBookModal();
   closeBookModal();
   getAddBookData();
 }
 
 function addBookToLibrary(bookObj) {
-  myLibrary.push(bookObj);
+  myLibrary.unshift(new Book(bookObj));
 }
 
 function showBooksFromLibrary(myLibrary) {
-  // this needs a check for if the item is already displayed on the page
-
-  myLibrary.forEach((book) => {
-    createBookInfo(book);
-  });
+  createBookInfo(myLibrary[0]);
 }
 
 function createBookInfo(book) {
@@ -67,6 +61,7 @@ function getAddBookData() {
     e.preventDefault();
     getFormData();
     addBookToLibrary(bookValues);
+    showBooksFromLibrary(myLibrary);
   });
 }
 
@@ -77,7 +72,5 @@ function getFormData() {
     bookValues[item[0]] = item[1];
   }
 }
-
-let fakeagain = new Book(bookValues);
 
 init();

@@ -1,13 +1,15 @@
+let bookValues = {};
 const myLibrary = [];
 const myLibraryOnPage = document.querySelector(".mylibrary");
 const modalContainer = document.querySelector(".modal-container");
+const form = document.querySelector(".modal-form");
 
 class Book {
-  constructor(title, author, pages, read) {
-    (this.title = title),
-      (this.author = author),
-      (this.pages = pages),
-      (this.read = read);
+  constructor(bookValues) {
+    (this.author = bookValues.author),
+      (this.title = bookValues.title),
+      (this.pages = bookValues.pages),
+      (this.read = bookValues.read);
   }
 
   info() {
@@ -21,7 +23,7 @@ function init() {
   showBooksFromLibrary(myLibrary);
   openNewBookModal();
   closeBookModal();
-  getBookData();
+  getAddBookData();
 }
 
 function addBookToLibrary(bookObj) {
@@ -29,6 +31,8 @@ function addBookToLibrary(bookObj) {
 }
 
 function showBooksFromLibrary(myLibrary) {
+  // this needs a check for if the item is already displayed on the page
+
   myLibrary.forEach((book) => {
     createBookInfo(book);
   });
@@ -58,31 +62,22 @@ function closeBookModal() {
     .addEventListener("click", () => (modalContainer.style.display = "none"));
 }
 
-const bookValues = {};
-function getBookData() {
-  const form = document.querySelector(".modal-form");
-
+function getAddBookData() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const formData = new FormData(form);
-    for (item of formData) {
-      bookValues[item[0]] = item[1];
-    }
+    getFormData();
+    addBookToLibrary(bookValues);
   });
 }
 
-// --- this section will go soon ---
-faket = new Book("fakeT", "FakeA", 36, true);
-faket2 = new Book("fakeT2", "FakeA2", 100, false);
-faket3 = new Book("fakeT3", "FakeA3", 36, true);
-faket4 = new Book("fakeT4", "FakeA4", 36, true);
-faket5 = new Book("fakeT5", "FakeA5", 36, true);
+function getFormData() {
+  const formData = new FormData(form);
+  bookValues = {};
+  for (item of formData) {
+    bookValues[item[0]] = item[1];
+  }
+}
 
-addBookToLibrary(faket);
-addBookToLibrary(faket2);
-addBookToLibrary(faket3);
-addBookToLibrary(faket4);
-addBookToLibrary(faket5);
-// --- end ---
+let fakeagain = new Book(bookValues);
 
 init();

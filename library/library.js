@@ -10,12 +10,6 @@ class Book {
       (this.pages = bookValues.pages),
       (this.read = bookValues.read);
   }
-
-  info() {
-    return `<p>${this.author}</p> <p>${this.title} </p> <p> ${
-      this.pages
-    } pages </p> <button> ${this.read ? "read" : "not read"}</button>`;
-  }
 }
 
 function init() {
@@ -41,7 +35,28 @@ function createBookInfo(book) {
   bookDetails.classList.add("book-details");
   myLibraryOnPage.appendChild(newBook);
   newBook.appendChild(bookInfo);
-  bookInfo.innerHTML = book.info();
+  newBook.setAttribute("data-book-card", `${myLibrary.length}`);
+  setBookInfo(bookInfo, book);
+}
+
+function setBookInfo(bookInfo, book) {
+  const bookTitle = document.createElement("p");
+  const bookAuthor = document.createElement("p");
+  const bookPages = document.createElement("p");
+  const bookRead = document.createElement("button");
+  const bookRemove = document.createElement("button");
+  bookAuthor.innerText = book.author;
+  bookInfo.appendChild(bookAuthor);
+  bookTitle.innerText = book.title;
+  bookInfo.appendChild(bookTitle);
+  bookPages.innerText = book.pages;
+  bookInfo.appendChild(bookPages);
+  bookRead.innerText = book.read === undefined ? "not read" : "read";
+  bookInfo.appendChild(bookRead);
+  bookRead.classList.add("book-read-btn");
+  bookRemove.innerText = "Remove Book";
+  bookInfo.appendChild(bookRemove);
+  bookRead.classList.add("book-remove-btn");
 }
 
 function openNewBookModal() {

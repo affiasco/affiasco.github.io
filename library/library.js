@@ -54,6 +54,7 @@ function setBookInfo(bookInfo, book) {
   bookRead.innerText = book.read === undefined ? "not read" : "read";
   bookInfo.appendChild(bookRead);
   bookRead.classList.add("book-read-btn");
+  bookRead.style.background = book.read !== undefined ? "green" : "red";
   bookRemove.innerText = "Remove Book";
   bookInfo.appendChild(bookRemove);
   bookRead.classList.add("book-remove-btn");

@@ -16,6 +16,7 @@ function init() {
   openNewBookModal();
   closeBookModal();
   getAddBookData();
+  getBooksButtons();
 }
 
 function addBookToLibrary(bookObj) {
@@ -51,13 +52,13 @@ function setBookInfo(bookInfo, book) {
   bookInfo.appendChild(bookTitle);
   bookPages.innerText = book.pages;
   bookInfo.appendChild(bookPages);
-  bookRead.innerText = book.read === undefined ? "not read" : "read";
+  bookRead.innerText = book.read === undefined ? "Not Read" : "Read";
   bookInfo.appendChild(bookRead);
   bookRead.classList.add("book-read-btn");
   bookRead.style.background = book.read !== undefined ? "green" : "red";
   bookRemove.innerText = "Remove Book";
   bookInfo.appendChild(bookRemove);
-  bookRead.classList.add("book-remove-btn");
+  bookRemove.classList.add("book-remove-btn");
 }
 
 function openNewBookModal() {
@@ -87,6 +88,38 @@ function getFormData() {
   for (item of formData) {
     bookValues[item[0]] = item[1];
   }
+}
+
+function getBooksButtons() {
+  document.querySelector(".books-container").addEventListener("click", (e) => {
+    switch (e.target.innerText) {
+      case "Not Read":
+        switchRead(e.target);
+        break;
+      case "Read":
+        switchNotRead(e.target);
+        break;
+      case "Remove Book":
+        removeBookFromPage(e.target.parentNode.parentNode);
+        break;
+      default:
+        break;
+    }
+  });
+}
+
+function switchRead(eTar) {
+  eTar.style.background = "green";
+  eTar.innerText = "Read";
+}
+
+function switchNotRead(eTar) {
+  eTar.style.background = "red";
+  eTar.innerText = "Not Read";
+}
+
+function removeBookFromPage(eTarPnPn) {
+  myLibraryOnPage.removeChild(eTarPnPn);
 }
 
 init();

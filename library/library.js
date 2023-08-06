@@ -55,7 +55,7 @@ function setBookInfo(bookInfo, book) {
   bookRead.innerText = book.read === undefined ? "Not Read" : "Read";
   bookInfo.appendChild(bookRead);
   bookRead.classList.add("book-read-btn");
-  bookRead.style.background = book.read !== undefined ? "green" : "red";
+  bookRead.style.background = book.read !== undefined ? "#6D9886" : "#E26868";
   bookRemove.innerText = "Remove Book";
   bookInfo.appendChild(bookRemove);
   bookRemove.classList.add("book-remove-btn");
@@ -109,12 +109,12 @@ function getBooksButtons() {
 }
 
 function switchRead(eTar) {
-  eTar.style.background = "green";
+  eTar.style.background = "#6D9886";
   eTar.innerText = "Read";
 }
 
 function switchNotRead(eTar) {
-  eTar.style.background = "red";
+  eTar.style.background = "#E26868";
   eTar.innerText = "Not Read";
 }
 

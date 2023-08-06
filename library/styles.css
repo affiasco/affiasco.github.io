@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nanum Pen Script", cursive;
+}
+
+nav {
+  background-color: #ffdede;
+}
+
+html,
+.page-container {
+  background-color: #faf0e4;
+}
+
+nav,
+.mylibrary {
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.page-container {
+  text-align: center;
+}
+
+.page-container > .add-book {
+  font-size: 2.5rem;
+}
+
+.modal-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.close-modal {
+  color: #aaa;
+  position: relative;
+  top: -25px;
+  left: 310px;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:active {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  background-color: #fefefe;
+  margin: 11% auto;
+  padding: 3rem;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+.modal-content > h1 {
+  font-size: 3.5rem;
+  margin-top: -1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  margin: 0.8rem 0;
+}
+
+.form-row > label {
+  font-size: 1.7rem;
+  display: inline-block;
+  width: 240px;
+}
+
+.form-row > input {
+  height: 2rem;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.form-row:last-child {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.form-row > button {
+  padding: 0.8rem 2rem;
+  font-size: 1.4rem;
+}
+
+.modal-checkbox {
+  width: 25px;
+  height: 25px;
+}
+
+.add-book,
+.book-remove-btn {
+  background-color: #9bcdd2;
+}
+
+.add-book {
+  font-size: 2rem;
+  padding: 2rem;
+  margin: 1rem;
+  border: none;
+}
+
+.add-book:hover {
+  cursor: pointer;
+}
+
+.mylibrary {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.book-card {
+  min-width: 20%;
+  padding: 2rem;
+}
+
+.book-info {
+  background-color: #ffdede;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 3rem;
+  border: 2px solid #393e46;
+  border-radius: 20px;
+}
+
+.book-info > button {
+  font-size: 1.4rem;
+  padding: 0.8rem 2rem;
+}

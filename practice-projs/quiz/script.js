@@ -15,8 +15,12 @@ startButton.addEventListener("click", (event) => {
   startQuizSection.classList.add("hidden");
   questionSection.classList.remove("hidden")
   message.innerText = ""
+  startTimer();
 })
 
+let time = 120;
+const timer = document.querySelector(".timer");
+timer.innerText = `Timer: ${time}`;
 
 // question buttons
 questionSection.addEventListener("click", (event) => {
@@ -25,6 +29,7 @@ questionSection.addEventListener("click", (event) => {
     event.target.style.border = "2px solid red"
     event.target.style.color = "red"
     message.innerText = "Incorrect :("
+    time -= 10;
     setTimeout(() => {
       event.target.style.border = "2px solid #218380"
       event.target.style.color = "white"
@@ -34,6 +39,12 @@ questionSection.addEventListener("click", (event) => {
   if (event.target.classList.contains("cor")) {
     message.innerText = "Correct!"
   }
-
- 
 })
+
+// time
+const startTimer = () => {
+  setInterval(() => {
+    time --;
+    timer.innerText = `Timer: ${time}`;
+  }, 1000)
+}

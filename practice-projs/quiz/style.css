@@ -101,3 +101,8 @@ button:hover {
   font-size: 3rem;
   font-weight: bold;
 }
+
+.incorrect-answer {
+  border: 2px solid red;
+  color: red;
+}

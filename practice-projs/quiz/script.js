@@ -1,7 +1,8 @@
 const Quiz = () => {
   const message = document.querySelector(".message");
   const timer = document.querySelector(".timer");
-  let time = 90;
+  let intervalId;
+  let time = 0;
   let score = 0;
 
   const renderTimer = () => {
@@ -9,10 +10,12 @@ const Quiz = () => {
   };
 
   const startTimer = () => {
-    setInterval(() => {
-      time--;
-      timer.innerText = `Timer: ${time}`;
-    }, 1000);
+    intervalId = setInterval(() => timeStart(), 1000);
+  };
+
+  const timeStart = () => {
+    time++;
+    timer.innerText = `Timer: ${time}`;
   };
 
   const startQuiz = (startQuizSection, questionSection) => {
@@ -36,7 +39,7 @@ const Quiz = () => {
 
     if (isIncorrect) {
       event.target.classList.add("incorrect-answer");
-      time -= 10;
+      time += 10;
       setTimeout(() => {
         event.target.classList.remove("incorrect-answer");
       }, 500);
@@ -78,16 +81,14 @@ const Quiz = () => {
 
   const stopTimer = () => {
     const currentTime = timer.innerText;
+    clearInterval(intervalId);
     return currentTime.split(":")[1];
   };
 
   const renderFinalTime = () => {
     const finalTime = parseInt(stopTimer());
-    console.log(finalTime);
     const showFinalTime = document.querySelector(".show-final-time");
-    showFinalTime.innerText = `You completed the quiz in: ${
-      90 - finalTime
-    } seconds`;
+    showFinalTime.innerText = `You completed the quiz in: ${finalTime} seconds`;
   };
 
   const showFinalResultSection = () => {

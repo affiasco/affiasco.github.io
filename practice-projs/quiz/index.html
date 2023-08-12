@@ -25,22 +25,44 @@
       <p>Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
       <button class="start-button">Start Quiz</button>
     </div>
-    <div class="first-question question-section hidden">
-      <h1 class="heading">Commonly used data types DO NOT include:</h1>
-      <button class="button-question q1 ncor">1. strings</button>
-      <button class="button-question q2 ncor">2. booleans</button>
-      <button class="button-question q3 cor">3. alerts</button>
-      <button class="button-question q4 ncor">4. numbers</button>
+    <div class="question-section hidden" data-question="1">
+      <h1 class="heading">Which is not a primitive datatype:</h1>
+      <button class="button-question q1 ncor">string</button>
+      <button class="button-question q2 ncor">null</button>
+      <button class="button-question q3 cor">object</button>
+      <button class="button-question q4 ncor">number</button>
     </div>
-    <div class="second-question question-section hidden">
-      <h1 class="heading">Arrays in JavaScript can be used to store_____ </h1>
-      <button class="button-question q1 ncor">1. numbers and strings</button>
-      <button class="button-question q2 ncor">2. other arrays </button>
-      <button class="button-question q3 ncor">3. booleans </button>
-      <button class="button-question q4 cor">4. all of the above</button>
+    <div class="question-section hidden" data-question="2">
+      <h1 class="heading">What does typeof NaN return?</h1>
+      <button class="button-question q1 ncor">number</button>
+      <button class="button-question q2 ncor">Not a Number</button>
+      <button class="button-question q3 cor">'number'</button>
+      <button class="button-question q4 ncor">string</button>
+    </div>
+    <div class="question-section hidden" data-question="3">
+      <h1 class="heading">How do you declare an Immediately Invoked Function?</h1>
+      <button class="button-question q1 ncor">1. const func = () => {}; </button>
+      <button class="button-question q2 ncor">2. function func(){}; </button>
+      <button class="button-question q3 cor">3. (function(){})(); </button>
+      <button class="button-question q4 ncor">4. const Function = () => {}</button>
+    </div>
+    <div class="question-section hidden" data-question="4">
+      <h1 class="heading">If a function invocation is preceded by the keyword new, then it is a ...?</h1>
+      <button class="button-question q1 ncor">new invocation</button>
+      <button class="button-question q2 cor">constructor invocation</button>
+      <button class="button-question q3 ncor">indirect invocation</button>
+      <button class="button-question q4 ncor">direct invocation</button>
+    </div>
+    <div class="question-section hidden" data-question="5">
+      <h1 class="heading">Among the given statements, which statement defines closure?</h1>
+      <button class="button-question q1 ncor">A function that is enclosed with the object to its inner function scope</button>
+      <button class="button-question q2 ncor">A function that is enclosed with references to its inner function scope</button>
+      <button class="button-question q3 cor">A function that is enclosed with references to its lexical environment</button>
+      <button class="button-question q4 ncor">None of the above</button>
     </div>
     <div class="message"></div>
   </div>
-  <script src="scrip2.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+

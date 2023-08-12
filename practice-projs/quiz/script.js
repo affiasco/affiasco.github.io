@@ -2,6 +2,7 @@ const Quiz = () => {
   const message = document.querySelector(".message");
   const timer = document.querySelector(".timer");
   let time = 120;
+  let score = 0;
 
   const renderTimer = () => {
     timer.innerText = `Timer: ${time}`;
@@ -9,7 +10,7 @@ const Quiz = () => {
 
   const startTimer = () => {
     setInterval(() => {
-      time --;
+      time--;
       timer.innerText = `Timer: ${time}`;
     }, 1000)
   }
@@ -18,7 +19,7 @@ const Quiz = () => {
     startQuizSection.classList.add("hidden");
     questionSection.classList.remove("hidden");
     message.innerText = "";
-    startTimer();
+          startTimer();
   };
 
   const answerResponse = event => {
@@ -36,23 +37,52 @@ const Quiz = () => {
         event.target.classList.remove("incorrect-answer");
       }, 500);
     }
+
+    if (isCorrect) {
+      score += 10;
+      showNextQuestion(event.target)
+    };
   };
 
+  const showNextQuestion = eventTarget => {
+    const questionNum = eventTarget.parentElement.dataset.question;
+    setTimeout(() => {
+      message.innerText = "";
+    }, 1000);
+      
+    if (questionNum >= 5) {
+      // showFinalResults();
+      return;
+    }
+  
+    const nextQuestionNum = parseInt(questionNum) + 1;
+    const currentQuestion = document.querySelector(`[data-question="${questionNum}"]`);
+    const nextQuestion = document.querySelector(`[data-question="${nextQuestionNum}"]`);
+  
+    currentQuestion.classList.add("hidden");
+    nextQuestion.classList.remove("hidden");
+  };
 
+  // showFinalResult(); {
+      // also will want to render the final results of the timer is 0
+      // and hide the current question
 
-  return { answerResponse, renderTimer, startTimer, startQuiz };
+  // }
+
+  const getScore = () => score;
+
+  return { answerResponse, renderTimer, startTimer, startQuiz, getScore };
 };
 
 const quizModule = Quiz();
 quizModule.renderTimer();
 
-const startButton  = document.querySelector(".start-button");
+const startButton = document.querySelector(".start-button");
 const startQuizSection = document.querySelector(".start-quiz-section")
 const questionSection = document.querySelector(".question-section")
 
-startButton.addEventListener("click", () => {
-  quizModule.startQuiz(startQuizSection, questionSection);
-});
+startButton.addEventListener("click", () =>
+  quizModule.startQuiz(startQuizSection, questionSection));
 
 const buttonQuestion = document.querySelectorAll(".button-question")
-buttonQuestion.forEach((button) => button.addEventListener("click", quizModule.answerResponse))
+buttonQuestion.forEach((button) => button.addEventListener("click", quizModule.answerResponse));   

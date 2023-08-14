@@ -122,3 +122,6 @@ const buttonQuestion = document.querySelectorAll(".button-question");
 buttonQuestion.forEach((button) =>
   button.addEventListener("click", quizModule.answerResponse)
 );
+
+// store user information from finished modal into Local storage
+// render that information after clicking the high score button in nav

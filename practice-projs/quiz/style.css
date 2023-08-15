@@ -57,9 +57,13 @@ button:hover {
   gap: 2rem;
 }
 
-.question-section,
-.final-score-section {
+.question-section {
   gap: 0.6rem;
+}
+
+.final-score-section {
+  gap: 2rem;
+  justify-content: flex-start;
 }
 
 .heading {

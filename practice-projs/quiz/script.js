@@ -1,6 +1,8 @@
 const Quiz = () => {
   const message = document.querySelector(".message");
   const timer = document.querySelector(".timer");
+  const showFinalTime = document.querySelector(".show-final-time");
+  const showFinalScore = document.querySelector(".show-final-score");
   let intervalId;
   let time = 0;
   let score = 0;
@@ -72,11 +74,10 @@ const Quiz = () => {
       : nextQuestion.classList.remove("hidden");
   };
 
-  const getScore = () => score;
-
   const renderFinalScore = () => {
-    const scoreEle = document.querySelector(".show-final-score");
-    scoreEle.innerText = `Your Final Score is: ${getScore()}`;
+    const userScore = getScore();
+    showFinalScore.setAttribute("data-score", `${userScore}`)
+    showFinalScore.innerText = `Your Final Score is: ${userScore}`;
   };
 
   const stopTimer = () => {
@@ -87,18 +88,56 @@ const Quiz = () => {
 
   const renderFinalTime = () => {
     const finalTime = parseInt(stopTimer());
-    const showFinalTime = document.querySelector(".show-final-time");
+    showFinalTime.setAttribute("data-time", `${finalTime}`)
     showFinalTime.innerText = `You completed the quiz in: ${finalTime} seconds`;
   };
 
   const showFinalResultSection = () => {
-    const finalScoreSection = document.querySelector(".final-score-section");
     finalScoreSection.classList.remove("hidden");
     renderFinalScore();
     renderFinalTime();
   };
 
+  const finalScoreTime = (eventTarget) => {
+    const input = document.querySelector("#name");
+    if (eventTarget.className === "add-to-hs"){
+      const userObj = {
+        "userName": input.value,
+        "finalTime": showFinalTime.getAttribute("data-time"),
+        "finalScore": showFinalScore.getAttribute("data-score")
+      }
+      addFinalScoreToLocal(userObj)
+    } else {
+      return;
+    }
+  }
+
+  const addFinalScoreToLocal = (userObject) => {
+    const localStorageItems = [];
+    for(let i = 0; i < localStorage.length; i++){
+      localStorageItems.push(localStorage.key(i));
+    }
+
+    localStorage.setItem(`hsData-${localStorageItems.length}`, JSON.stringify(userObject));
+  }
+
+  const renderHighScores = () => {
+    const highScoresList = document.querySelector(".high-scores-list");
+    for(let i = 0; i < localStorage.length; i++){
+      let key = localStorage.key(i);
+      let parsedJson = JSON.parse(localStorage[key])
+      let newListItem = document.createElement("li")
+      highScoresList.appendChild(newListItem)
+      newListItem.innerText = parsedJson.finalScore;
+    }
+
+  }
+
+  const getScore = () => score;
+
   return {
+    finalScoreTime,
+    renderHighScores,
     answerResponse,
     renderTimer,
     startTimer,
@@ -123,5 +162,9 @@ buttonQuestion.forEach((button) =>
   button.addEventListener("click", quizModule.answerResponse)
 );
 
-// store user information from finished modal into Local storage
-// render that information after clicking the high score button in nav
+const finalScoreSection = document.querySelector(".final-score-section");
+finalScoreSection.addEventListener("click", (event) => quizModule.finalScoreTime(event.target))
+
+const highScoreButton = document.querySelector(".high-score-button");
+highScoreButton.addEventListener("click", quizModule.renderHighScores)
+

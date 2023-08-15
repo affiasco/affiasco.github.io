@@ -120,15 +120,31 @@ const Quiz = () => {
 
     localStorage.setItem(`hsData-${localStorageItems.length}`, JSON.stringify(userObject));
   }
+  
+  const sortLocalStorage = () => {
+    const items = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key.startsWith("hsData-")) {
+        const itemData = JSON.parse(localStorage.getItem(key));
+        items.push(itemData);
+      }
+    }
+  
+    return items.sort((a, b) => parseFloat(a.finalTime) - parseFloat(b.finalTime));
+  }
 
   const renderHighScores = () => {
     const highScoresList = document.querySelector(".high-scores-list");
-    for(let i = 0; i < localStorage.length; i++){
-      let key = localStorage.key(i);
-      let parsedJson = JSON.parse(localStorage[key])
+    const sortedStorage = sortLocalStorage();
+    console.log(sortedStorage)
+
+    for(let i = 0; i < sortedStorage.length; i++){
+      // let key = sortedStorage.key(i);
+      // let parsedJson = JSON.parse(localStorage[key])
       let newListItem = document.createElement("li")
       highScoresList.appendChild(newListItem)
-      newListItem.innerText = parsedJson.finalScore;
+      newListItem.innerText = `Name: ${sortedStorage.userName} Time:${sortedStorage.time} Score: ${sortedStorage.finalScore}`;
     }
 
   }
@@ -136,9 +152,11 @@ const Quiz = () => {
   const getScore = () => score;
 
   return {
+    // sortLocalStorage,
     finalScoreTime,
     renderHighScores,
     answerResponse,
+    renderHighScores,
     renderTimer,
     startTimer,
     startQuiz,

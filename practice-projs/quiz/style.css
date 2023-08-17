@@ -16,11 +16,26 @@
 }
 
 .high-score-button {
+  border: none;
   background-color: #218380;
   color: #fff;
   padding: 1rem 2rem;
-  border: none;
   font-size: 2rem;
+}
+
+.reset {
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  color: #218380;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+}
+
+.reset:hover {
+  background-color: #ffffffe7;
+  border: 1px solid #ffffff6b;
 }
 
 .button-question:last-child {
@@ -121,6 +136,6 @@ button:hover {
   color: red;
 }
 
-.show-high-scores > p {
-  /* margin-bottom: 1.5rem; */
+.reset {
+  border: none;
 }

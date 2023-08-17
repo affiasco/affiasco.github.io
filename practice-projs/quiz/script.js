@@ -3,6 +3,7 @@ const Quiz = () => {
   const timer = document.querySelector(".timer");
   const showFinalTime = document.querySelector(".show-final-time");
   const showFinalScore = document.querySelector(".show-final-score");
+  const highScoreSection = document.querySelector(".show-high-scores");
   let intervalId;
   let time = 0;
   let score = 0;
@@ -165,7 +166,6 @@ const Quiz = () => {
   };
 
   const showHs = () => {
-    const highScoreSection = document.querySelector(".show-high-scores");
     highScoreSection.classList.remove("hidden");
   };
 
@@ -190,9 +190,27 @@ const Quiz = () => {
     return Array.from(hsItems);
   };
 
+  const resetQuiz = () => {
+    time = 0;
+    score = 0;
+    message.innerText = "";
+    hideCurrentQuestionHS();
+    stopTimer();
+    renderTimer();
+    startQuizSection.classList.remove("hidden");
+    highScoreSection.classList.add("hidden");
+  };
+
+  const youLose = () => {
+    // need to find a way for this to trigger (event listener?)
+    if (parseInt(timer.innerText) >= 120) resetQuiz();
+  };
+
   const getScore = () => score;
 
   return {
+    youLose,
+    resetQuiz,
     finalScoreTime,
     answerResponse,
     renderHighScores,
@@ -205,6 +223,7 @@ const Quiz = () => {
 
 const quizModule = Quiz();
 quizModule.renderTimer();
+quizModule.youLose();
 
 const startButton = document.querySelector(".start-button");
 const startQuizSection = document.querySelector(".start-quiz-section");
@@ -227,4 +246,8 @@ finalScoreSection.addEventListener("click", (event) =>
 const highScoreButton = document.querySelector(".high-score-button");
 highScoreButton.addEventListener("click", quizModule.renderHighScores);
 
-// when clicking highscore needs to only append once
+const resetButton = document.querySelector(".reset");
+resetButton.addEventListener("click", quizModule.resetQuiz);
+
+// change the code to show the high scores as a modal
+// need to fix you the youLose method

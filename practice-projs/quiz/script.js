@@ -76,7 +76,7 @@ const Quiz = () => {
 
   const renderFinalScore = () => {
     const userScore = getScore();
-    showFinalScore.setAttribute("data-score", `${userScore}`)
+    showFinalScore.setAttribute("data-score", `${userScore}`);
     showFinalScore.innerText = `Your Final Score is: ${userScore}`;
   };
 
@@ -88,7 +88,7 @@ const Quiz = () => {
 
   const renderFinalTime = () => {
     const finalTime = parseInt(stopTimer());
-    showFinalTime.setAttribute("data-time", `${finalTime}`)
+    showFinalTime.setAttribute("data-time", `${finalTime}`);
     showFinalTime.innerText = `You completed the quiz in: ${finalTime} seconds`;
   };
 
@@ -100,27 +100,30 @@ const Quiz = () => {
 
   const finalScoreTime = (eventTarget) => {
     const input = document.querySelector("#name");
-    if (eventTarget.className === "add-to-hs"){
+    if (eventTarget.className === "add-to-hs") {
       const userObj = {
-        "userName": input.value,
-        "finalTime": showFinalTime.getAttribute("data-time"),
-        "finalScore": showFinalScore.getAttribute("data-score")
-      }
-      addFinalScoreToLocal(userObj)
+        userName: input.value,
+        finalTime: showFinalTime.getAttribute("data-time"),
+        finalScore: showFinalScore.getAttribute("data-score"),
+      };
+      addFinalScoreToLocal(userObj);
     } else {
       return;
     }
-  }
+  };
 
   const addFinalScoreToLocal = (userObject) => {
     const localStorageItems = [];
-    for(let i = 0; i < localStorage.length; i++){
+    for (let i = 0; i < localStorage.length; i++) {
       localStorageItems.push(localStorage.key(i));
     }
 
-    localStorage.setItem(`hsData-${localStorageItems.length}`, JSON.stringify(userObject));
-  }
-  
+    localStorage.setItem(
+      `hsData-${localStorageItems.length}`,
+      JSON.stringify(userObject)
+    );
+  };
+
   const sortLocalStorage = () => {
     const items = [];
     for (let i = 0; i < localStorage.length; i++) {
@@ -130,31 +133,29 @@ const Quiz = () => {
         items.push(itemData);
       }
     }
-  
-    return items.sort((a, b) => parseFloat(a.finalTime) - parseFloat(b.finalTime));
-  }
+
+    return items.sort(
+      (a, b) => parseFloat(a.finalTime) - parseFloat(b.finalTime)
+    );
+  };
 
   const renderHighScores = () => {
     const highScoresList = document.querySelector(".high-scores-list");
     const sortedStorage = sortLocalStorage();
-    console.log(sortedStorage)
 
-    for(let i = 0; i < sortedStorage.length; i++){
-      // let key = sortedStorage.key(i);
-      // let parsedJson = JSON.parse(localStorage[key])
-      let newListItem = document.createElement("li")
-      highScoresList.appendChild(newListItem)
-      newListItem.innerText = `Name: ${sortedStorage.userName} Time:${sortedStorage.time} Score: ${sortedStorage.finalScore}`;
+    for (let i = 0; i < localStorage.length; i++) {
+      let sortedItem = sortedStorage[i];
+      let newListItem = document.createElement("li");
+      highScoresList.appendChild(newListItem);
+      newListItem.innerText = `Name: ${sortedItem.userName} Time:${sortedItem.finalTime} Score: ${sortedItem.finalScore}`;
     }
-
-  }
+  };
 
   const getScore = () => score;
 
   return {
     // sortLocalStorage,
     finalScoreTime,
-    renderHighScores,
     answerResponse,
     renderHighScores,
     renderTimer,
@@ -181,8 +182,9 @@ buttonQuestion.forEach((button) =>
 );
 
 const finalScoreSection = document.querySelector(".final-score-section");
-finalScoreSection.addEventListener("click", (event) => quizModule.finalScoreTime(event.target))
+finalScoreSection.addEventListener("click", (event) =>
+  quizModule.finalScoreTime(event.target)
+);
 
 const highScoreButton = document.querySelector(".high-score-button");
-highScoreButton.addEventListener("click", quizModule.renderHighScores)
-
+highScoreButton.addEventListener("click", quizModule.renderHighScores);

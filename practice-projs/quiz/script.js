@@ -51,6 +51,7 @@ const Quiz = () => {
     if (isIncorrect) {
       event.target.classList.add("incorrect-answer");
       time += 10;
+      score -= 1;
       setTimeout(() => {
         event.target.classList.remove("incorrect-answer");
       }, 500);
@@ -182,14 +183,12 @@ const Quiz = () => {
     const sortedStorage = sortLocalStorage();
 
     if (localStorage.length === getHighScoreItems().length) return;
-
     for (let i = 0; i < localStorage.length; i++) {
       let sortedItem = sortedStorage[i];
       let newListItem = document.createElement("li");
       newListItem.classList.add("hs-item");
       highScoresList.appendChild(newListItem);
       newListItem.innerText = `Name: ${sortedItem.userName} Time:${sortedItem.finalTime} Score: ${sortedItem.finalScore}`;
-      checkHsShowing();
     }
   };
 

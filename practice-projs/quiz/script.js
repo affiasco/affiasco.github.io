@@ -53,17 +53,17 @@ const Quiz = () => {
     }
   };
 
+  const getQuestionNum = (eventTarget) => {
+    return eventTarget.parentElement.dataset.question;
+  };
+
   const showNextQuestion = (eventTarget) => {
-    const questionNum = eventTarget.parentElement.dataset.question;
+    const questionNum = getQuestionNum(eventTarget);
     setTimeout(() => {
       message.innerText = "";
     }, 1000);
 
-    const currentQuestion = document.querySelector(
-      `[data-question="${questionNum}"]`
-    );
-
-    currentQuestion.classList.add("hidden");
+    hideCurrentQuestion(questionNum);
     const nextQuestionNum = parseInt(questionNum) + 1;
     const nextQuestion = document.querySelector(
       `[data-question="${nextQuestionNum}"]`
@@ -72,6 +72,14 @@ const Quiz = () => {
     nextQuestionNum > 5
       ? showFinalResultSection()
       : nextQuestion.classList.remove("hidden");
+  };
+
+  const hideCurrentQuestion = (questionNum) => {
+    const currentQuestion = document.querySelector(
+      `[data-question="${questionNum}"]`
+    );
+
+    currentQuestion.classList.add("hidden");
   };
 
   const renderFinalScore = () => {
@@ -139,22 +147,52 @@ const Quiz = () => {
     );
   };
 
+  const hideCurrentQuestionHS = () => {
+    const questions = document.querySelectorAll(".question-section");
+    startQuizSection.classList.add("hidden");
+
+    Array.from(questions).forEach((c) => {
+      if (c.classList[1] === undefined) {
+        c.classList.add("hidden");
+      }
+    });
+  };
+
   const renderHighScores = () => {
+    hideCurrentQuestionHS();
+    showHs();
+    addItemsToHS();
+  };
+
+  const showHs = () => {
+    const highScoreSection = document.querySelector(".show-high-scores");
+    highScoreSection.classList.remove("hidden");
+  };
+
+  const addItemsToHS = () => {
     const highScoresList = document.querySelector(".high-scores-list");
     const sortedStorage = sortLocalStorage();
+
+    if (localStorage.length === getHighScoreItems().length) return;
 
     for (let i = 0; i < localStorage.length; i++) {
       let sortedItem = sortedStorage[i];
       let newListItem = document.createElement("li");
+      newListItem.classList.add("hs-item");
       highScoresList.appendChild(newListItem);
       newListItem.innerText = `Name: ${sortedItem.userName} Time:${sortedItem.finalTime} Score: ${sortedItem.finalScore}`;
+      checkHsShowing();
     }
+  };
+
+  const getHighScoreItems = () => {
+    const hsItems = document.querySelectorAll(".hs-item");
+    return Array.from(hsItems);
   };
 
   const getScore = () => score;
 
   return {
-    // sortLocalStorage,
     finalScoreTime,
     answerResponse,
     renderHighScores,
@@ -188,3 +226,5 @@ finalScoreSection.addEventListener("click", (event) =>
 
 const highScoreButton = document.querySelector(".high-score-button");
 highScoreButton.addEventListener("click", quizModule.renderHighScores);
+
+// when clicking highscore needs to only append once

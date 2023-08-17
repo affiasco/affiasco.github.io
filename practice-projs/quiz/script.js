@@ -17,8 +17,16 @@ const Quiz = () => {
   };
 
   const timeStart = () => {
+    youLose();
     time++;
     timer.innerText = `Timer: ${time}`;
+  };
+
+  const youLose = () => {
+    if (time >= 120) {
+      // can add a little you lose pop-up
+      resetQuiz();
+    }
   };
 
   const startQuiz = (startQuizSection, questionSection) => {
@@ -191,25 +199,19 @@ const Quiz = () => {
   };
 
   const resetQuiz = () => {
+    stopTimer();
     time = 0;
     score = 0;
-    message.innerText = "";
     hideCurrentQuestionHS();
-    stopTimer();
-    renderTimer();
+    message.innerText = "";
     startQuizSection.classList.remove("hidden");
     highScoreSection.classList.add("hidden");
-  };
-
-  const youLose = () => {
-    // need to find a way for this to trigger (event listener?)
-    if (parseInt(timer.innerText) >= 120) resetQuiz();
+    renderTimer();
   };
 
   const getScore = () => score;
 
   return {
-    youLose,
     resetQuiz,
     finalScoreTime,
     answerResponse,
@@ -223,7 +225,6 @@ const Quiz = () => {
 
 const quizModule = Quiz();
 quizModule.renderTimer();
-quizModule.youLose();
 
 const startButton = document.querySelector(".start-button");
 const startQuizSection = document.querySelector(".start-quiz-section");

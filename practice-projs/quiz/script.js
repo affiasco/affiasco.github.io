@@ -24,8 +24,10 @@ const Quiz = () => {
 
   const youLose = () => {
     if (time >= 120) {
-      // can add a little you lose pop-up
-      resetQuiz();
+      message.innerText =
+        "You ran out of time! Sending you back to home in 3...";
+      message.style.color = "red";
+      setInterval(() => resetQuiz(), 3000);
     }
   };
 
@@ -183,7 +185,6 @@ const Quiz = () => {
 
     if (localStorage.length === getHighScoreItems().length) return;
     for (let i = 0; i < localStorage.length; i++) {
-      // could iterate through and check if that index of the array exists on the page with a data-attribute
       let presentItem = document.querySelector(`[data-item="${i}"]`);
       let sortedItem = sortedStorage[i];
       let newListItem = document.createElement("li");
@@ -265,6 +266,3 @@ closeModal.addEventListener(
   "click",
   () => (modalContainer.style.display = "none")
 );
-
-// need to fix you the youLose method
-// fix appending all new localstorage data when adding hs

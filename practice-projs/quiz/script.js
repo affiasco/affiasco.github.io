@@ -169,7 +169,6 @@ const Quiz = () => {
   };
 
   const renderHighScores = () => {
-    hideCurrentQuestionHS();
     showHs();
     addItemsToHS();
   };
@@ -184,11 +183,16 @@ const Quiz = () => {
 
     if (localStorage.length === getHighScoreItems().length) return;
     for (let i = 0; i < localStorage.length; i++) {
+      // could iterate through and check if that index of the array exists on the page with a data-attribute
+      let presentItem = document.querySelector(`[data-item="${i}"]`);
       let sortedItem = sortedStorage[i];
       let newListItem = document.createElement("li");
-      newListItem.classList.add("hs-item");
-      highScoresList.appendChild(newListItem);
-      newListItem.innerText = `Name: ${sortedItem.userName} Time:${sortedItem.finalTime} Score: ${sortedItem.finalScore}`;
+      if (presentItem === null) {
+        newListItem.classList.add("hs-item");
+        newListItem.setAttribute("data-item", `${i}`);
+        highScoresList.appendChild(newListItem);
+        newListItem.innerText = `Name: ${sortedItem.userName}\nTime: ${sortedItem.finalTime}\nScore: ${sortedItem.finalScore}`;
+      }
     }
   };
 
@@ -205,6 +209,7 @@ const Quiz = () => {
     message.innerText = "";
     startQuizSection.classList.remove("hidden");
     highScoreSection.classList.add("hidden");
+    finalScoreSection.classList.add("hidden");
     renderTimer();
   };
 
@@ -249,21 +254,17 @@ highScoreButton.addEventListener("click", quizModule.renderHighScores);
 const resetButton = document.querySelector(".reset");
 resetButton.addEventListener("click", quizModule.resetQuiz);
 
-// change the code to show the high scores as a modal
-// need to fix you the youLose method
-
-// modal
-
 const modalContainer = document.querySelector(".modal-container");
 highScoreButton.addEventListener(
   "click",
   () => (modalContainer.style.display = "block")
 );
 
-function closeBookModal() {
-  document
-    .querySelector(".close-modal")
-    .addEventListener("click", () => (modalContainer.style.display = "none"));
-}
+const closeModal = document.querySelector(".close-modal");
+closeModal.addEventListener(
+  "click",
+  () => (modalContainer.style.display = "none")
+);
 
-closeBookModal();
+// need to fix you the youLose method
+// fix appending all new localstorage data when adding hs

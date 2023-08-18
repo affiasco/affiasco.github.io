@@ -139,3 +139,49 @@ button:hover {
 .reset {
   border: none;
 }
+
+.modal-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  background-color: #fefefe;
+  margin: 11% auto;
+  padding: 3rem;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+.modal-content > h1 {
+  font-size: 3.5rem;
+  margin-top: -1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.close-modal {
+  color: #aaa;
+  position: relative;
+  top: -25px;
+  left: 310px;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:active {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

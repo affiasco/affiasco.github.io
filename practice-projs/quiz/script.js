@@ -251,3 +251,19 @@ resetButton.addEventListener("click", quizModule.resetQuiz);
 
 // change the code to show the high scores as a modal
 // need to fix you the youLose method
+
+// modal
+
+const modalContainer = document.querySelector(".modal-container");
+highScoreButton.addEventListener(
+  "click",
+  () => (modalContainer.style.display = "block")
+);
+
+function closeBookModal() {
+  document
+    .querySelector(".close-modal")
+    .addEventListener("click", () => (modalContainer.style.display = "none"));
+}
+
+closeBookModal();

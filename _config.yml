@@ -1,3 +1,6 @@
-remote_theme: chrisrhymes/bulma-clean-theme
+# remote_theme: chrisrhymes/bulma-clean-theme
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 title: Andrew's Homepage
+plugins:
+  - jekyll-include-cachenu
 description: Bookmark this to keep an eye on my project updates!

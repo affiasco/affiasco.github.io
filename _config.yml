@@ -1,5 +1,5 @@
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-site.local: "en-US"
+local: "en-US"
 plugins:
   - jekyll-include-cache
   - jekyll-remote-theme
@@ -16,10 +16,3 @@ defaults:
     values:
       layout: single
       author_profile: true
-main:
-  - title: "Projects"
-    url: pages/projects.html
-  - title: "Resume"
-    url: pages/resume.html
-  - title: "About Me"
-    url: pages/about.html

@@ -1,0 +1,7 @@
+main:
+  - title: "Projects"
+    url: pages/projects.html
+  - title: "Resume"
+    url: pages/resume.html
+  - title: "About Me"
+    url: pages/about.html

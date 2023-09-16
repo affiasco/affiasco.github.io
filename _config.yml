@@ -1,6 +1,11 @@
 # remote_theme: chrisrhymes/bulma-clean-theme
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-title: Andrew's Homepage
+site.local: "en-US"
 plugins:
   - jekyll-include-cachenu
-description: Bookmark this to keep an eye on my project updates!
+minimal_mistakes_skin: "dark"
+url: "affiasco.github.io"
+repistory: "https://github.com/affiasco/affiasco.github.io"
+title: "Andrew's Journey"
+name: "Andrew Fiasco"
+description: "A website about Andrew's personal and professional journey into the world of software"

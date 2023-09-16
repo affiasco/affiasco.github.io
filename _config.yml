@@ -1,8 +1,8 @@
-# remote_theme: chrisrhymes/bulma-clean-theme
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 site.local: "en-US"
 plugins:
-  - jekyll-include-cachenu
+  - jekyll-include-cache
+  - jekyll-remote-theme
 minimal_mistakes_skin: "dark"
 url: "affiasco.github.io"
 repistory: "https://github.com/affiasco/affiasco.github.io"

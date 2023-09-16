@@ -1,5 +1,5 @@
 # remote_theme: chrisrhymes/bulma-clean-theme
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+theme: minimal-mistakes-jekyll
 site.local: "en-US"
 plugins:
   - jekyll-include-cachenu
@@ -9,3 +9,10 @@ repistory: "https://github.com/affiasco/affiasco.github.io"
 title: "Andrew's Journey"
 name: "Andrew Fiasco"
 description: "A website about Andrew's personal and professional journey into the world of software"
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true

@@ -1,11 +1,4 @@
-// export function navComponent() {
-//   const navContainer = document.createElement("div");
-//   navContainer.classList.add("nav-container");
-
-//
-// }
-
-export const NavComponent = () => {
+const NavComponent = () => {
   const content = document.querySelector(".content");
   const navContainer = () => {
     const container = document.createElement("div");

@@ -1,0 +1,12 @@
+.nav-list-items {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.nav-list-items > li {
+  border: 1px solid black;
+  /* border-bottom: none; */
+  padding: 1rem 2rem;
+}

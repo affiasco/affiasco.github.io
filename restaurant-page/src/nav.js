@@ -2,36 +2,48 @@
 //   const navContainer = document.createElement("div");
 //   navContainer.classList.add("nav-container");
 
-//   const navListItems = document.createElement("ol");
-//   navListItems.classList.add("nav-list-items");
-
-//   const navHome = document.createElement("li");
-//   navHome.classList.add("nav-home");
-
-//   const navMenu = document.createElement("li");
-//   navHome.classList.add("nav-menu");
-
-//   const navContact = document.createElement("li");
-//   navHome.classList.add("nav-contact");
-
-//   navContact.appendChild(navListItems);
-//   navListItems.appendChild(navHome);
-//   navListItems.appendChild(navMenu);
-//   navListItems.appendChild(navContact);
+//
 // }
 
 export const NavComponent = () => {
   const navContainer = () => {
-    const navContainer = document.createElement("div");
-    navContainer.classList.add("nav-container");
+    const container = document.createElement("div");
+    container.classList.add("nav-container");
 
-    document.body.appendChild(navContainer);
-    navContainer.innerText = "Hey";
+    const listItems = navListItems();
+
+    container.appendChild(listItems);
+
+    document.body.appendChild(container);
   };
-  return { navContainer };
+
+  const navListItems = () => {
+    const listItems = document.createElement("ul");
+    listItems.classList.add("nav-list-items");
+
+    const navHome = document.createElement("li");
+    navHome.classList.add("nav-home");
+    navHome.innerText = "Home";
+
+    const navMenu = document.createElement("li");
+    navMenu.classList.add("nav-menu");
+    navMenu.innerText = "Menu";
+
+    const navContact = document.createElement("li");
+    navContact.classList.add("nav-contact");
+    navContact.innerText = "Contact";
+
+    listItems.appendChild(navHome);
+    listItems.appendChild(navMenu);
+    listItems.appendChild(navContact);
+
+    return listItems;
+  };
+
+  return { navContainer, navListItems };
 };
 
-const navComponent = NavComponent();
 export function renderNav() {
+  const navComponent = NavComponent();
   navComponent.navContainer();
 }

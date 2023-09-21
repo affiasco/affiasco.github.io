@@ -1,13 +1,12 @@
 const NavComponent = () => {
   const content = document.querySelector(".content");
+
   const navContainer = () => {
-    const container = document.createElement("div");
+    const container = document.createElement("nav");
     container.classList.add("nav-container");
 
     const listItems = navListItems();
-
     container.appendChild(listItems);
-
     content.appendChild(container);
   };
 
@@ -34,7 +33,7 @@ const NavComponent = () => {
     return listItems;
   };
 
-  return { navContainer, navListItems };
+  return { navContainer };
 };
 
 export function renderNav() {

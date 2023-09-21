@@ -1,1 +1,3 @@
-console.log("this is me");
+import { renderNav } from "./nav";
+
+renderNav();

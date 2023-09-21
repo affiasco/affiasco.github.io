@@ -1,1 +1,1 @@
-console.log("this is me");
+(()=>{"use strict";(()=>{const e=document.createElement("div");e.classList.add("nav-container"),document.body.appendChild(e),e.innerText="Hey"})()})();

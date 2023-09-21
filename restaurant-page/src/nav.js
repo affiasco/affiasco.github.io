@@ -6,6 +6,7 @@
 // }
 
 export const NavComponent = () => {
+  const content = document.querySelector(".content");
   const navContainer = () => {
     const container = document.createElement("div");
     container.classList.add("nav-container");
@@ -14,7 +15,7 @@ export const NavComponent = () => {
 
     container.appendChild(listItems);
 
-    document.body.appendChild(container);
+    content.appendChild(container);
   };
 
   const navListItems = () => {

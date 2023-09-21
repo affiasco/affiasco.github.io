@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope&display=swap"
+      rel="stylesheet"
+    />
+    <!-- END FONT -->
+    <title>Quiz</title>
+  </head>
+  <body>
+    <nav class="nav-header">
+      <div class="high-scores">
+        <button class="high-score-button">View Highscores</button>
+        <button class="reset">Reset</button>
+      </div>
+      <div class="timer"></div>
+    </nav>
+    <div class="container">
+      <div class="modal-container">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <div class="show-high-scores hidden">
+            <div class="hs-info">
+              <h1>High Scores</h1>
+              <p>Ordered by lowest time</p>
+            </div>
+            <ol class="high-scores-list"></ol>
+          </div>
+        </div>
+      </div>
+      <div class="start-quiz-section">
+        <h1 class="heading">Coding Quiz Challenge</h1>
+        <p>
+          You have <strong> 120 seconds</strong> to answer the following
+          code-related question
+        </p>
+        <p>
+          Incorrect answers will <strong>reduce</strong> your score by 1 and
+          time by 10 ten seconds!
+        </p>
+        <button class="start-button">Start Quiz</button>
+      </div>
+      <div class="question-section hidden" data-question="1">
+        <h1 class="heading">Which is not a primitive datatype:</h1>
+        <button class="button-question q1 ncor">string</button>
+        <button class="button-question q2 ncor">null</button>
+        <button class="button-question q3 cor">object</button>
+        <button class="button-question q4 ncor">number</button>
+      </div>
+      <div class="question-section hidden" data-question="2">
+        <h1 class="heading">What does typeof NaN return?</h1>
+        <button class="button-question q1 cor">'number'</button>
+        <button class="button-question q1 ncor">number</button>
+        <button class="button-question q3 ncor">Not a Number</button>
+        <button class="button-question q4 ncor">string</button>
+      </div>
+      <div class="question-section hidden" data-question="3">
+        <h1 class="heading">
+          How do you declare an Immediately Invoked Function?
+        </h1>
+        <button class="button-question q1 ncor">const func = () => {};</button>
+        <button class="button-question q2 ncor">function func(){};</button>
+        <button class="button-question q3 ncor">
+          const Function = () => {}
+        </button>
+        <button class="button-question q4 cor">function(){}();</button>
+      </div>
+      <div class="question-section hidden" data-question="4">
+        <h1 class="heading">
+          If a function invocation is preceded by the keyword new, then it is a
+          ...?
+        </h1>
+        <button class="button-question q1 ncor">new invocation</button>
+        <button class="button-question q2 cor">constructor invocation</button>
+        <button class="button-question q3 ncor">indirect invocation</button>
+        <button class="button-question q4 ncor">direct invocation</button>
+      </div>
+      <div class="question-section hidden" data-question="5">
+        <h1 class="heading">
+          Among the given statements, which statement defines closure?
+        </h1>
+        <button class="button-question q1 ncor">
+          A function that is enclosed with the object to its inner function
+          scope
+        </button>
+        <button class="button-question q2 ncor">
+          A function that is enclosed with references to its inner function
+          scope
+        </button>
+        <button class="button-question q3 cor">
+          A function that is enclosed with references to its lexical environment
+        </button>
+        <button class="button-question q4 ncor">None of the above</button>
+      </div>
+      <div class="final-score-section hidden">
+        <h1>Congratulations! You finished!</h1>
+        <p class="show-final-score" data-score=""></p>
+        <p class="show-final-time" data-time=""></p>
+        <div class="enter-hs-info">
+          <label for="name">Name: </label>
+          <input type="text" id="name" />
+        </div>
+        <button class="add-to-hs">Add to High Scores</button>
+      </div>
+
+      <div class="message"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

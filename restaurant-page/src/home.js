@@ -4,24 +4,32 @@ const Homepage = () => {
   const mainContent = () => {
     const container = document.createElement("div");
     container.classList.add("home-container");
+    container.classList.add("content-container");
 
+    // can probably move most of this into their own functions
+    const headingContainer = document.createElement("div");
     const mainHeading = homepageHeading();
-    container.appendChild(mainHeading);
-
+    headingContainer.classList.add("content-item-container");
+    container.appendChild(headingContainer);
+    headingContainer.appendChild(mainHeading);
     const aboutSection = homepageAbout();
-    container.appendChild(aboutSection);
+    headingContainer.appendChild(aboutSection);
 
+    const hoursContainer = document.createElement("div");
+    hoursContainer.classList.add("content-item-container");
     const hoursHeading = homepageHoursHeading();
-    container.appendChild(hoursHeading);
-
+    container.appendChild(hoursContainer);
+    hoursContainer.appendChild(hoursHeading);
     const hoursList = homepageHoursList();
-    container.appendChild(hoursList);
+    hoursContainer.appendChild(hoursList);
 
+    const locationContainer = document.createElement("div");
+    locationContainer.classList.add("content-item-container");
     const locationHeading = homepageLocationHeading();
-    container.appendChild(locationHeading);
-
+    container.appendChild(locationContainer);
+    locationContainer.appendChild(locationHeading);
     const location = homepageLocation();
-    container.appendChild(location);
+    locationContainer.appendChild(location);
 
     content.appendChild(container);
   };
@@ -35,6 +43,7 @@ const Homepage = () => {
 
   const homepageAbout = () => {
     const about = document.createElement("p");
+    about.classList.add("content-para");
     about.innerText =
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quasi unde vero maxime, atque harum vel obcaecati consectetur earum magni sint minus quae cumque maiores. Quod autem consectetur repudiandae alias?";
 
@@ -49,6 +58,7 @@ const Homepage = () => {
 
   const homepageHoursList = () => {
     const hoursList = document.createElement("ul");
+    hoursList.classList.add("hours-list");
 
     const monday = document.createElement("li");
     hoursList.appendChild(monday);

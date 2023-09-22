@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .nav-list-items {
   list-style: none;
   display: flex;
@@ -9,4 +15,39 @@
   border: 1px solid black;
   /* border-bottom: none; */
   padding: 1rem 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  gap: 4rem;
+  width: 80vw;
+  height: 85vh;
+}
+
+.content-item-container {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.content-para {
+  width: 50%;
+}
+
+.hours-list {
+  list-style: none;
 }

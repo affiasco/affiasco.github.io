@@ -6,32 +6,10 @@ const Homepage = () => {
     container.classList.add("home-container");
     container.classList.add("content-container");
 
-    // can probably move most of this into their own functions
-    const headingContainer = document.createElement("div");
-    const mainHeading = homepageHeading();
-    headingContainer.classList.add("content-item-container");
-    container.appendChild(headingContainer);
-    headingContainer.appendChild(mainHeading);
-    const aboutSection = homepageAbout();
-    headingContainer.appendChild(aboutSection);
-
-    const hoursContainer = document.createElement("div");
-    hoursContainer.classList.add("content-item-container");
-    const hoursHeading = homepageHoursHeading();
-    container.appendChild(hoursContainer);
-    hoursContainer.appendChild(hoursHeading);
-    const hoursList = homepageHoursList();
-    hoursContainer.appendChild(hoursList);
-
-    const locationContainer = document.createElement("div");
-    locationContainer.classList.add("content-item-container");
-    const locationHeading = homepageLocationHeading();
-    container.appendChild(locationContainer);
-    locationContainer.appendChild(locationHeading);
-    const location = homepageLocation();
-    locationContainer.appendChild(location);
-
     content.appendChild(container);
+    container.appendChild(homepageAboutSection());
+    container.appendChild(homepageHoursSection());
+    container.appendChild(homepageLocationSection());
   };
 
   const homepageHeading = () => {
@@ -48,6 +26,20 @@ const Homepage = () => {
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quasi unde vero maxime, atque harum vel obcaecati consectetur earum magni sint minus quae cumque maiores. Quod autem consectetur repudiandae alias?";
 
     return about;
+  };
+
+  const homepageAboutSection = () => {
+    const headingContainer = document.createElement("div");
+    const mainHeading = homepageHeading();
+    const aboutSection = homepageAbout();
+
+    headingContainer.classList.add("content-item-container");
+    headingContainer.classList.add("about-container");
+
+    headingContainer.appendChild(mainHeading);
+    headingContainer.appendChild(aboutSection);
+
+    return headingContainer;
   };
 
   const homepageHoursHeading = () => {
@@ -91,6 +83,20 @@ const Homepage = () => {
     return hoursList;
   };
 
+  const homepageHoursSection = () => {
+    const hoursContainer = document.createElement("div");
+    const hoursHeading = homepageHoursHeading();
+    const hoursList = homepageHoursList();
+
+    hoursContainer.classList.add("content-item-container");
+    hoursContainer.classList.add("hours-container");
+
+    hoursContainer.appendChild(hoursHeading);
+    hoursContainer.appendChild(hoursList);
+
+    return hoursContainer;
+  };
+
   const homepageLocationHeading = () => {
     const heading = document.createElement("h1");
     heading.innerText = "Location";
@@ -101,6 +107,21 @@ const Homepage = () => {
     const location = document.createElement("p");
     location.innerText = "123 Forest Avenue, Forestville, Maine";
     return location;
+  };
+
+  const homepageLocationSection = () => {
+    const locationContainer = document.createElement("div");
+    const locationHeading = homepageLocationHeading();
+    const location = homepageLocation();
+
+    locationContainer.classList.add("content-item-container");
+    locationContainer.classList.add("location-container");
+
+    // container.appendChild(locationContainer);
+    locationContainer.appendChild(locationHeading);
+    locationContainer.appendChild(location);
+
+    return locationContainer;
   };
 
   return { mainContent };

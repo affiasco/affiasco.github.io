@@ -1,7 +1,7 @@
-const Homepage = () => {
+const HomePage = () => {
   const content = document.querySelector(".content");
 
-  const mainContent = () => {
+  const homepageMainContent = () => {
     const container = document.createElement("div");
     container.classList.add("home-container");
     container.classList.add("content-container");
@@ -117,17 +117,15 @@ const Homepage = () => {
     locationContainer.classList.add("content-item-container");
     locationContainer.classList.add("location-container");
 
-    // container.appendChild(locationContainer);
     locationContainer.appendChild(locationHeading);
     locationContainer.appendChild(location);
 
     return locationContainer;
   };
 
-  return { mainContent };
+  return { homepageMainContent };
 };
 
 export function renderHomepage() {
-  const homepageMainContent = Homepage();
-  homepageMainContent.mainContent();
+  return HomePage().homepageMainContent();
 }

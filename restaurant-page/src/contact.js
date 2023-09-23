@@ -4,13 +4,13 @@ const ContactPage = () => {
   const contactPageMainContent = () => {
     const container = document.createElement("div");
     container.classList.add("contact-container");
-    container.classList.add("content-container");
     content.appendChild(container);
     container.appendChild(contactSection());
   };
 
   const contactHeading = () => {
     const heading = document.createElement("h1");
+    heading.classList.add("contact-heading");
     heading.innerText = "Contact Us";
 
     return heading;
@@ -21,10 +21,10 @@ const ContactPage = () => {
     chefSection.classList.add("contact-person");
 
     const chefName = document.createElement("h2");
-    chefName.innerText = "Chef Name";
+    chefName.innerText = "Head Chef";
 
     const chefInfo = document.createElement("p");
-    chefInfo.innerHTML = `Name<br />123-456-7890<br />chef@email.com`;
+    chefInfo.innerHTML = `Johnny Potatoes<br />123-456-7890<br />chef@email.com`;
 
     chefSection.appendChild(chefName);
     chefSection.appendChild(chefInfo);
@@ -37,10 +37,10 @@ const ContactPage = () => {
     managerSection.classList.add("contact-person");
 
     const managerName = document.createElement("h2");
-    managerName.innerText = "Manager Name";
+    managerName.innerText = "Manager";
 
     const managerInfo = document.createElement("p");
-    managerInfo.innerHTML = `Name<br />123-456-7890<br />manager@email.com`;
+    managerInfo.innerHTML = `Matilda Barnes<br />123-456-7890<br />manager@email.com`;
 
     managerSection.appendChild(managerName);
     managerSection.appendChild(managerInfo);
@@ -48,34 +48,35 @@ const ContactPage = () => {
     return managerSection;
   };
 
-  const contactWaiter = () => {
-    const waiterSection = document.createElement("div");
-    waiterSection.classList.add("contact-person");
+  const contactServer = () => {
+    const serverSection = document.createElement("div");
+    serverSection.classList.add("contact-person");
 
-    const waiterName = document.createElement("h2");
-    waiterName.innerText = "Waiter Name";
+    const serverName = document.createElement("h2");
+    serverName.innerText = "Lead Server";
 
-    const waiterInfo = document.createElement("p");
-    waiterInfo.innerHTML = `Name<br />123-456-7890<br />waiter@email.com`;
+    const serverInfo = document.createElement("p");
+    serverInfo.innerHTML = `Rupert Finkle<br />123-456-7890<br />server@email.com`;
 
-    waiterSection.appendChild(waiterName);
-    waiterSection.appendChild(waiterInfo);
+    serverSection.appendChild(serverName);
+    serverSection.appendChild(serverInfo);
 
-    return waiterSection;
+    return serverSection;
   };
 
   const contactContent = () => {
     const contactContent = document.createElement("div");
+    contactContent.classList.add("content-container");
+    contactContent.appendChild(contactHeading());
     contactContent.appendChild(contactChef());
     contactContent.appendChild(contactManager());
-    contactContent.appendChild(contactWaiter());
+    contactContent.appendChild(contactServer());
 
     return contactContent;
   };
   const contactSection = () => {
     const contentSection = document.createElement("div");
     contactContent();
-    contentSection.appendChild(contactHeading());
     contentSection.appendChild(contactContent());
 
     return contentSection;

@@ -1,3 +1,6 @@
+:root {
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +16,6 @@
 
 .nav-list-items > li {
   border: 1px solid black;
-  /* border-bottom: none; */
   padding: 1rem 2rem;
 }
 
@@ -31,7 +33,7 @@
   border: 1px solid black;
   gap: 4rem;
   width: 80vw;
-  height: 85vh;
+  height: 85%;
 }
 
 .content-item-container {
@@ -50,4 +52,24 @@
 
 .hours-list {
   list-style: none;
+}
+
+.contact-heading {
+  margin-top: 3rem;
+}
+
+.contact-person {
+  border: 1px solid green;
+  padding: 2rem;
+  text-align: left;
+}
+
+.contact-person > h2 {
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-person > p {
+  letter-spacing: 0.05rem;
+  line-height: 1.9rem;
 }

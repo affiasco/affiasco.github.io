@@ -30,7 +30,7 @@
   border: 1px solid black;
   gap: 4rem;
   width: 80vw;
-  height: 85%;
+  min-height: 85%;
 }
 
 .content-item-container {

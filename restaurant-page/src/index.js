@@ -5,5 +5,5 @@ import { renderContactPage } from "./contact";
 
 renderNav();
 // renderHomepage();
-// renderMenuPage();
-renderContactPage();
+renderMenuPage();
+// renderContactPage();

@@ -15,6 +15,7 @@ const MenuPage = () => {
 
   const menuHeading = () => {
     const menuHeading = document.createElement("h1");
+    menuHeading.classList.add("menu-heading");
     menuHeading.innerText = "Menu";
 
     return menuHeading;
@@ -26,13 +27,34 @@ const MenuPage = () => {
 
     return beveragesHeading;
   };
-  const beveragesContent = () => {
-    // sodas
-    // teas
+
+  const beveragesSoda = () => {
+    const sodaContent = document.createElement("div");
+    sodaContent.classList.add("soda-content");
+
+    const sodaTitle = document.createElement("h2");
+    sodaTitle.innerText = "Sodas";
+
+    const sodaInfo = document.createElement("p");
+    sodaInfo.innerText = "Coke Products Available via Can";
+
+    const sodaImg = document.createElement("img");
+    sodaImg.src =
+      "/home/affiasco/git_repos/affiasco.github.io/restaurant-page/src/assets/images/sodas.jpeg";
+
+    sodaContent.appendChild(sodaTitle);
+    sodaContent.appendChild(sodaInfo);
+    sodaContent.appendChild(sodaImg);
+
+    return sodaContent;
   };
+  // tea
+
   const beveragesSection = () => {
     const beveragesSection = document.createElement("div");
+    beveragesSection.classList.add("beverages-section");
     beveragesSection.appendChild(beveragesHeading());
+    beveragesSection.appendChild(beveragesSoda());
 
     return beveragesSection;
   };

@@ -51,7 +51,8 @@
   list-style: none;
 }
 
-.contact-heading {
+.contact-heading,
+.menu-heading {
   margin-top: 3rem;
 }
 

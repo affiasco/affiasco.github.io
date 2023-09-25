@@ -1,3 +1,5 @@
+import burgerImage from "./assets/images/burger.jpg";
+
 const MenuPage = () => {
   const content = document.querySelector(".content");
 
@@ -72,7 +74,7 @@ const MenuPage = () => {
 
   const beveragesSection = () => {
     const beveragesSection = document.createElement("div");
-    beveragesSection.classList.add("beverages-section");
+    beveragesSection.classList.add("menu-section");
     beveragesSection.appendChild(beveragesHeading());
     beveragesSection.appendChild(beveragesSoda());
     beveragesSection.appendChild(beveragesTea());
@@ -154,6 +156,7 @@ const MenuPage = () => {
 
   const sidesSection = () => {
     const sidesSection = document.createElement("div");
+    sidesSection.classList.add("menu-section");
     sidesSection.appendChild(sidesHeading());
     sidesSection.appendChild(sidesFries());
     sidesSection.appendChild(sidesSalad());
@@ -167,11 +170,6 @@ const MenuPage = () => {
     dishesHeading.innerText = "Main Dishes";
 
     return dishesHeading;
-  };
-  const dishesContent = () => {
-    //sandwhich
-    //pasta
-    //burger
   };
 
   const dishesSandwhich = () => {
@@ -230,8 +228,8 @@ const MenuPage = () => {
       "Locally sourced bison burger included with a variety of toppings included bacon, avocado, lettuce, tommato and a garlic aioli";
 
     const burgerImg = document.createElement("img");
-    burgerImg.src =
-      "/home/affiasco/git_repos/affiasco.github.io/restaurant-page/src/assets/images/burger.jpg";
+    burgerImg.src = burgerImage;
+    // "/home/affiasco/git_repos/affiasco.github.io/restaurant-page/src/assets/images/burger.jpg";
 
     dishesBurger.appendChild(burgerTitle);
     dishesBurger.appendChild(burgerInfo);
@@ -241,13 +239,14 @@ const MenuPage = () => {
   };
 
   const dishesSection = () => {
-    const dishesSections = document.createElement("div");
-    dishesSections.appendChild(dishesHeading());
-    dishesSections.appendChild(dishesSandwhich());
-    dishesSections.appendChild(dishesPasta());
-    dishesSections.appendChild(dishesBurger());
+    const dishesSection = document.createElement("div");
+    dishesSection.classList.add("menu-section");
+    dishesSection.appendChild(dishesHeading());
+    dishesSection.appendChild(dishesSandwhich());
+    dishesSection.appendChild(dishesPasta());
+    dishesSection.appendChild(dishesBurger());
 
-    return dishesSections;
+    return dishesSection;
   };
 
   return { menuPageMainContent };

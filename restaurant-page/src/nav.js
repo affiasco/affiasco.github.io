@@ -7,7 +7,7 @@ const NavComponent = () => {
 
     const listItems = navListItems();
     container.appendChild(listItems);
-    content.appendChild(container);
+    document.body.insertBefore(container, content);
   };
 
   const navListItems = () => {
@@ -16,14 +16,17 @@ const NavComponent = () => {
 
     const navHome = document.createElement("li");
     navHome.classList.add("nav-home");
+    navHome.classList.add("nav-item");
     navHome.innerText = "Home";
 
     const navMenu = document.createElement("li");
     navMenu.classList.add("nav-menu");
+    navMenu.classList.add("nav-item");
     navMenu.innerText = "Menu";
 
     const navContact = document.createElement("li");
     navContact.classList.add("nav-contact");
+    navContact.classList.add("nav-item");
     navContact.innerText = "Contact";
 
     listItems.appendChild(navHome);

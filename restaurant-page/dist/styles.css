@@ -75,3 +75,43 @@ img {
   letter-spacing: 0.05rem;
   line-height: 1.9rem;
 }
+
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-section:last-child {
+  margin-bottom: 2rem;
+}
+
+.menu-item {
+  width: 38rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas:
+    "header header"
+    "para img";
+  align-items: center;
+  justify-items: center;
+  padding: 3rem;
+}
+
+.menu-item > h2 {
+  grid-area: header;
+}
+
+.menu-item > p {
+  grid-area: para;
+  width: 60%;
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.menu-item > img {
+  grid-area: img;
+  justify-self: left;
+}

@@ -40,6 +40,7 @@ const MenuPage = () => {
   const beveragesSoda = () => {
     const sodaContent = document.createElement("div");
     sodaContent.classList.add("bev-content");
+    sodaContent.classList.add("menu-item");
 
     const sodaTitle = document.createElement("h2");
     sodaTitle.innerText = "Sodas";
@@ -60,6 +61,7 @@ const MenuPage = () => {
   const beveragesTea = () => {
     const teaContent = document.createElement("div");
     teaContent.classList.add("bev-content");
+    teaContent.classList.add("menu-item");
 
     const teaTitle = document.createElement("h2");
     teaTitle.innerText = "Tea";
@@ -97,6 +99,7 @@ const MenuPage = () => {
   const sidesFries = () => {
     const friesContent = document.createElement("div");
     friesContent.classList.add("sides-content");
+    friesContent.classList.add("menu-item");
 
     const friesTitle = document.createElement("h2");
     friesTitle.innerText = "Fries";
@@ -117,6 +120,7 @@ const MenuPage = () => {
   const sidesSalad = () => {
     const sidesSalad = document.createElement("div");
     sidesSalad.classList.add("sides-content");
+    sidesSalad.classList.add("menu-item");
 
     const saladTitle = document.createElement("h2");
     saladTitle.innerText = "Salad";
@@ -138,6 +142,7 @@ const MenuPage = () => {
   const sidesSoup = () => {
     const sidesSoup = document.createElement("div");
     sidesSoup.classList.add("sides-content");
+    sidesSoup.classList.add("menu-item");
 
     const soupTitle = document.createElement("h2");
     soupTitle.innerText = "Soup";
@@ -159,6 +164,7 @@ const MenuPage = () => {
   const sidesSection = () => {
     const sidesSection = document.createElement("div");
     sidesSection.classList.add("menu-section");
+
     sidesSection.appendChild(sidesHeading());
     sidesSection.appendChild(sidesFries());
     sidesSection.appendChild(sidesSalad());
@@ -176,7 +182,8 @@ const MenuPage = () => {
 
   const dishesSandwhich = () => {
     const dishesSandwhich = document.createElement("div");
-    dishesSandwhich.classList.add("sides-content");
+    dishesSandwhich.classList.add("dishes-content");
+    dishesSandwhich.classList.add("menu-item");
 
     const sandwhichTitle = document.createElement("h2");
     sandwhichTitle.innerText = "Sandwhich";
@@ -197,7 +204,8 @@ const MenuPage = () => {
 
   const dishesPasta = () => {
     const dishesPasta = document.createElement("div");
-    dishesPasta.classList.add("sides-content");
+    dishesPasta.classList.add("dishes-content");
+    dishesPasta.classList.add("menu-item");
 
     const pastaTitle = document.createElement("h2");
     pastaTitle.innerText = "Pasta";
@@ -219,6 +227,7 @@ const MenuPage = () => {
   const dishesBurger = () => {
     const dishesBurger = document.createElement("div");
     dishesBurger.classList.add("sides-content");
+    dishesBurger.classList.add("menu-item");
 
     const burgerTitle = document.createElement("h2");
     burgerTitle.innerText = "Burger";
@@ -240,6 +249,7 @@ const MenuPage = () => {
   const dishesSection = () => {
     const dishesSection = document.createElement("div");
     dishesSection.classList.add("menu-section");
+
     dishesSection.appendChild(dishesHeading());
     dishesSection.appendChild(dishesSandwhich());
     dishesSection.appendChild(dishesPasta());

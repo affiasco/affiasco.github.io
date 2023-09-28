@@ -1,4 +1,11 @@
 import burgerImage from "./assets/images/burger.jpg";
+import friesImage from "./assets/images/fries.jpg";
+import pastaImage from "./assets/images/pasta.jpg";
+import saladImage from "./assets/images/salad.jpg";
+import sandwhichImage from "./assets/images/sandwhich.jpg";
+import sodaImage from "./assets/images/sodas.jpg";
+import soupImage from "./assets/images/soup.jpg";
+import teaImage from "./assets/images/teas.jpg";
 
 const MenuPage = () => {
   const content = document.querySelector(".content");
@@ -41,8 +48,7 @@ const MenuPage = () => {
     sodaInfo.innerText = "Coke Products Available via Can";
 
     const sodaImg = document.createElement("img");
-    sodaImg.src =
-      "/home/affiasco/git_repos/affiasco.github.io/restaurant-page/src/assets/images/sodas.jpeg";
+    sodaImg.src = sodaImage;
 
     sodaContent.appendChild(sodaTitle);
     sodaContent.appendChild(sodaInfo);
@@ -62,8 +68,7 @@ const MenuPage = () => {
     teaInfo.innerText = "Variety of herbal and caffinated teas";
 
     const teaImg = document.createElement("img");
-    teaImg.src =
-      "/home/affiasco/git_repos/affiasco.github.io/restaurant-page/src/assets/images/teas.jpg";
+    teaImg.src = teaImage;
 
     teaContent.appendChild(teaTitle);
     teaContent.appendChild(teaInfo);
@@ -100,8 +105,7 @@ const MenuPage = () => {
     friesInfo.innerText = "Hand cut and deep fried in ox-fat fries";
 
     const friesImg = document.createElement("img");
-    friesImg.src =
-      "/home/affiasco/git_repos/affiasco.github.io/restaurant-page/src/assets/images/fries.jpg";
+    friesImg.src = friesImage;
 
     friesContent.appendChild(friesTitle);
     friesContent.appendChild(friesInfo);
@@ -122,8 +126,7 @@ const MenuPage = () => {
       "Hand picked farm fresh salad with lettuce, tomatoes, onions, and a low-cal vinegar dressing";
 
     const saladImg = document.createElement("img");
-    saladImg.src =
-      "/home/affiasco/git_repos/affiasco.github.io/restaurant-page/src/assets/images/salad.jpg";
+    saladImg.src = saladImage;
 
     sidesSalad.appendChild(saladTitle);
     sidesSalad.appendChild(saladInfo);
@@ -144,8 +147,7 @@ const MenuPage = () => {
       "Yummy and fresh made warm soup, ask your server about the available soup of the day!";
 
     const soupImg = document.createElement("img");
-    soupImg.src =
-      "/home/affiasco/git_repos/affiasco.github.io/restaurant-page/src/assets/images/soup.jpg";
+    soupImg.src = soupImage;
 
     sidesSoup.appendChild(soupTitle);
     sidesSoup.appendChild(soupInfo);
@@ -184,8 +186,7 @@ const MenuPage = () => {
       "Delcious and panin pressed warm sandwhich with turkey, bacon, tomato, lettuce and yogurt dressing";
 
     const sandwhichImg = document.createElement("img");
-    sandwhichImg.src =
-      "/home/affiasco/git_repos/affiasco.github.io/restaurant-page/src/assets/images/sandwhich.jpg";
+    sandwhichImg.src = sandwhichImage;
 
     dishesSandwhich.appendChild(sandwhichTitle);
     dishesSandwhich.appendChild(sandwhichInfo);
@@ -206,8 +207,7 @@ const MenuPage = () => {
       "Gluten-free hand made chickpea pasta noodles with farm fresh home-made tomato vodka sauce";
 
     const pastaImg = document.createElement("img");
-    pastaImg.src =
-      "/home/affiasco/git_repos/affiasco.github.io/restaurant-page/src/assets/images/pasta.jpg";
+    pastaImg.src = pastaImage;
 
     dishesPasta.appendChild(pastaTitle);
     dishesPasta.appendChild(pastaInfo);
@@ -229,7 +229,6 @@ const MenuPage = () => {
 
     const burgerImg = document.createElement("img");
     burgerImg.src = burgerImage;
-    // "/home/affiasco/git_repos/affiasco.github.io/restaurant-page/src/assets/images/burger.jpg";
 
     dishesBurger.appendChild(burgerTitle);
     dishesBurger.appendChild(burgerInfo);

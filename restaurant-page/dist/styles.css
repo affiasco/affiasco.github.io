@@ -43,6 +43,10 @@
   padding: 1rem;
 }
 
+img {
+  height: auto;
+  max-width: 200px;
+}
 .content-para {
   width: 50%;
 }

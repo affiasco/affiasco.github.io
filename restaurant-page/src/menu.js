@@ -24,7 +24,7 @@ const MenuPage = () => {
 
   const menuHeading = () => {
     const menuHeading = document.createElement("h1");
-    menuHeading.classList.add("menu-heading");
+    menuHeading.classList.add("section-heading");
     menuHeading.innerText = "Menu";
 
     return menuHeading;

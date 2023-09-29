@@ -6,7 +6,9 @@ const HomePage = () => {
     container.classList.add("home-container");
     container.classList.add("content-container");
 
+    const homePageHeading = homepageHeading();
     content.appendChild(container);
+    container.appendChild(homePageHeading);
     container.appendChild(homepageAboutSection());
     container.appendChild(homepageHoursSection());
     container.appendChild(homepageLocationSection());
@@ -14,6 +16,7 @@ const HomePage = () => {
 
   const homepageHeading = () => {
     const heading = document.createElement("h1");
+    heading.classList.add("section-heading");
     heading.innerText = "Restaurant Page";
 
     return heading;
@@ -30,13 +33,13 @@ const HomePage = () => {
 
   const homepageAboutSection = () => {
     const headingContainer = document.createElement("div");
-    const mainHeading = homepageHeading();
+    // const mainHeading = homepageHeading();
     const aboutSection = homepageAbout();
 
     headingContainer.classList.add("content-item-container");
     headingContainer.classList.add("about-container");
 
-    headingContainer.appendChild(mainHeading);
+    // headingContainer.appendChild(mainHeading);
     headingContainer.appendChild(aboutSection);
 
     return headingContainer;
@@ -90,6 +93,8 @@ const HomePage = () => {
 
     hoursContainer.classList.add("content-item-container");
     hoursContainer.classList.add("hours-container");
+
+    // homepageHeading();
 
     hoursContainer.appendChild(hoursHeading);
     hoursContainer.appendChild(hoursList);

@@ -10,7 +10,7 @@ const ContactPage = () => {
 
   const contactHeading = () => {
     const heading = document.createElement("h1");
-    heading.classList.add("contact-heading");
+    heading.classList.add("section-heading");
     heading.innerText = "Contact Us";
 
     return heading;

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-image: url(../src/assets/images/vintage-old-rustic-cutlery-dark.jpg);
+}
+
 .nav-list-items {
   list-style: none;
   display: flex;
@@ -26,6 +30,14 @@
   align-items: center;
 }
 
+.home-container {
+  background-image: url("../src/assets/images/home-bg.jpg");
+}
+
+.contact-container {
+  background-image: url("../src/assets/images/contact-bg.jpg");
+}
+
 .content-container {
   display: flex;
   flex-direction: column;
@@ -38,7 +50,6 @@
 }
 
 .content-item-container {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +75,6 @@ img {
 }
 
 .contact-person {
-  border: 1px solid green;
   padding: 2rem;
   text-align: left;
 }
@@ -77,6 +87,11 @@ img {
 .contact-person > p {
   letter-spacing: 0.05rem;
   line-height: 1.9rem;
+}
+
+.menu-container {
+  background-image: url("../src/assets/images/menu-bg.jpg");
+  margin-bottom: 2remx;
 }
 
 .menu-section {

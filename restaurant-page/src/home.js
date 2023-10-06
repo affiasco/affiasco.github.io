@@ -33,13 +33,11 @@ const HomePage = () => {
 
   const homepageAboutSection = () => {
     const headingContainer = document.createElement("div");
-    // const mainHeading = homepageHeading();
     const aboutSection = homepageAbout();
 
     headingContainer.classList.add("content-item-container");
     headingContainer.classList.add("about-container");
 
-    // headingContainer.appendChild(mainHeading);
     headingContainer.appendChild(aboutSection);
 
     return headingContainer;
@@ -93,8 +91,6 @@ const HomePage = () => {
 
     hoursContainer.classList.add("content-item-container");
     hoursContainer.classList.add("hours-container");
-
-    // homepageHeading();
 
     hoursContainer.appendChild(hoursHeading);
     hoursContainer.appendChild(hoursList);

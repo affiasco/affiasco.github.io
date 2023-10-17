@@ -3,7 +3,6 @@
 JavaScript Projects:
 
 - [JS Quiz](https://affiasco.github.io/quiz)
-- [Restaurant Page](https://affiasco.github.io/restaurant-page)
 - [Library](https://affiasco.github.io/library)
 - [Calculator](https://affiasco.github.io/odin-calc/)
 - [Rock Paper Scissor](https://affiasco.github.io/rock-paper-scissors/)

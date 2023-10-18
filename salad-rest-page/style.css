@@ -54,7 +54,7 @@ button.order-button:hover {
     "heading heading"
     "side-img side-info";
   background-color: rgba(1, 13, 21, 0.9);
-  width: 50%;
+  width: 45%;
   height: 100%;
   color: white;
 }
@@ -81,6 +81,7 @@ button.order-button:hover {
 
 #side-info > h1 {
   margin-bottom: -1rem;
+  color: var(--yellow-button);
 }
 
 #side-info > ul {

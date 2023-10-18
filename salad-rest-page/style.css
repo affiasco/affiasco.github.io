@@ -1,0 +1,92 @@
+:root {
+  --primary-blue: #010d15;
+  --yellow-button: #ffe326;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background: var(--primary-blue);
+  padding: 0.7rem;
+}
+
+nav > ul {
+  color: white;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.order-button {
+  background-color: var(--yellow-button);
+  color: black;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  border: none;
+}
+
+button.order-button:hover {
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+.bg-content {
+  height: 100svh;
+  background: url(assets/images/background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.side-content {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr 4fr;
+  padding: 9rem;
+  grid-template-areas:
+    "heading heading"
+    "side-img side-info";
+  background-color: rgba(1, 13, 21, 0.9);
+  width: 50%;
+  height: 100%;
+  color: white;
+}
+
+#side-heading {
+  background-image: url(assets/images/specialoffers.png);
+  grid-area: heading;
+  margin-bottom: 3rem;
+}
+
+#side-img {
+  grid-area: side-img;
+  margin: 1rem;
+}
+
+#side-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  grid-area: side-info;
+  padding: 1rem;
+}
+
+#side-info > h1 {
+  margin-bottom: -1rem;
+}
+
+#side-info > ul {
+  list-style: none;
+}
+
+#side-info > ul > li {
+  margin: 0.5rem 0;
+}

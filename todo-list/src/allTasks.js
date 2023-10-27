@@ -12,7 +12,11 @@ const allTasks = () => {
     domContent.showCorrectPage(infoObj);
   };
 
-  return { renderPage };
+  const showPageOnLoad = () => {
+    domContent.showPageOnLoad(infoObj);
+  };
+
+  return { showPageOnLoad, renderPage };
 };
 
 export { allTasks };

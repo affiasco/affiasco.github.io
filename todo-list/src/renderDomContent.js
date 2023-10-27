@@ -41,7 +41,47 @@ const renderDomContent = () => {
     return taskButtonContainer;
   };
 
+  const openAddTask = () => {
+    // This is not opening when the page is loading
+    const addTaskBtn = document.querySelector(".add-task-btn");
+
+    addTaskBtn.addEventListener("click", (e) => {
+      console.log(e);
+      addTaskModal();
+    });
+  };
+
+  const addTaskModal = () => {
+    // just the modal
+    const taskModal = document.createElement("div");
+    taskModal.classList.add("add-task-modal");
+
+    const taskModalHeading = document.createElement("h1");
+    taskModalHeading.classList.add("add-task-heading");
+    taskModalHeading.innerText = "Create New Task";
+
+    taskModal.appendChild(taskModalHeading);
+
+    mainContentContainer.appendChild(taskModal);
+
+    // will have to append the taskForm
+  };
+
+  const taskForm = () => {
+    // create the form to be submitted in the taskModal
+  };
+
+  const pageActions = () => {
+    openAddTask();
+  };
+
   const renderPage = (infoObj) => {
+    mainContentContainer.innerHTML = "";
+    addTaskHeader(infoObj.headerText);
+    pageActions();
+  };
+
+  const showPageOnLoad = (infoObj) => {
     mainContentContainer.innerHTML = "";
     addTaskHeader(infoObj.headerText);
   };
@@ -53,7 +93,7 @@ const renderDomContent = () => {
     addRemoveActive();
   };
 
-  return { showCorrectPage };
+  return { showCorrectPage, showPageOnLoad };
 };
 
 export { renderDomContent };

@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #7eacc4;
+  --tertiary-color: #fff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,14 +20,13 @@
 }
 
 .header {
-  background-color: #7eacc4;
+  background-color: var(--primary-color);
   display: flex;
   align-items: center;
   padding-left: 2.5rem;
   font-size: 2.2rem;
   height: 13vh;
   grid-area: header;
-  border: 1px solid black;
 }
 
 .side-nav,
@@ -47,7 +51,7 @@
   padding: 0.8rem 1.8rem;
   font-size: 1.1rem;
   border: none;
-  background-color: #fff;
+  background-color: var(--tertiary-color);
 }
 
 .side-nav-btn:hover,
@@ -56,6 +60,10 @@
   background-color: lightgrey;
   border-radius: 2px;
   cursor: pointer;
+}
+
+.active {
+  font-weight: bold;
 }
 
 .side-nav > h2 {
@@ -86,18 +94,18 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 1rem;
+  padding: 2rem 0 2rem 1rem;
 }
 
 .task-btn-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 1rem;
+  padding-right: 3rem;
 }
 
 .add-task-btn {
-  background-color: #7eacc4;
+  background-color: var(--primary-color);
   border: 1px solid black;
   border-radius: 5px;
   padding: 1rem 2rem;

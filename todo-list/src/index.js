@@ -1,8 +1,8 @@
 import "./style.css";
-import "./allTasks.js";
-import "./todayTasks";
-import "./weeklyTasks";
-import "./renderDomContent.js";
-// import { renderDomContent } from "./renderDomContent.js";
+import { allTasks } from "./allTasks.js";
+import { todayTasks } from "./todayTasks";
+import { weeklyTasks } from "./weeklyTasks";
 
-// renderDomContent().addRemoveActive();
+allTasks().renderPage();
+todayTasks().renderPage();
+weeklyTasks().renderPage();

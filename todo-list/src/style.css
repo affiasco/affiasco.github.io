@@ -66,3 +66,8 @@
   border: 1px solid blue;
   grid-area: main-content;
 }
+
+.task-header {
+  text-align: center;
+  margin-top: 2rem;
+}

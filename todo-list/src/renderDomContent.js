@@ -3,6 +3,7 @@ const renderDomContent = () => {
 
   const addTaskHeader = (headerText) => {
     const newHeader = document.createElement("h1");
+    newHeader.classList.add("task-header");
 
     mainContentContainer.append(newHeader);
     newHeader.innerText = headerText;

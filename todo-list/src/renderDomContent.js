@@ -43,6 +43,7 @@ const renderDomContent = () => {
 
   const openAddTask = () => {
     // This is not opening when the page is loading
+    // I think this needs to be availabe when the page load occurs
     const addTaskBtn = document.querySelector(".add-task-btn");
 
     addTaskBtn.addEventListener("click", (e) => {

@@ -10,7 +10,7 @@ const renderDomContent = () => {
     newHeader.innerText = headerText;
 
     mainContentContainer.appendChild(headingContainer);
-    headingContainer.appendChild(addTaskButton());
+    headingContainer.appendChild(addTaskButtonOpenModal());
     headingContainer.appendChild(newHeader);
   };
 
@@ -28,7 +28,7 @@ const renderDomContent = () => {
     });
   };
 
-  const addTaskButton = () => {
+  const addTaskButtonOpenModal = () => {
     const taskButtonContainer = document.createElement("div");
     taskButtonContainer.classList.add("task-btn-container");
 
@@ -38,42 +38,55 @@ const renderDomContent = () => {
 
     taskButtonContainer.appendChild(taskButton);
 
+    taskButton.addEventListener("click", () => {
+      addTaskModal();
+      openTaskModal();
+      // closeTaskModal();
+    });
+
     return taskButtonContainer;
   };
 
-  const openAddTask = () => {
-    // This is not opening when the page is loading
-    // I think this needs to be availabe when the page load occurs
-    const addTaskBtn = document.querySelector(".add-task-btn");
-
-    addTaskBtn.addEventListener("click", (e) => {
-      console.log(e);
-      addTaskModal();
-    });
-  };
-
   const addTaskModal = () => {
-    // just the modal
     const taskModal = document.createElement("div");
     taskModal.classList.add("add-task-modal");
+
+    const taskModalContent = document.createElement("div");
+    taskModalContent.classList.add("add-task-modal-content");
+
+    taskModal.appendChild(taskModalContent);
 
     const taskModalHeading = document.createElement("h1");
     taskModalHeading.classList.add("add-task-heading");
     taskModalHeading.innerText = "Create New Task";
 
-    taskModal.appendChild(taskModalHeading);
+    const modalCloseButton = document.createElement("p");
+    modalCloseButton.classList.add("close-add-task-modal");
+    modalCloseButton.innerText = "X";
+
+    taskModalContent.appendChild(modalCloseButton);
+    taskModalContent.appendChild(taskModalHeading);
 
     mainContentContainer.appendChild(taskModal);
+    closeTaskModal();
 
-    // will have to append the taskForm
+    return taskModal;
+  };
+
+  const openTaskModal = () => {
+    const modalContainer = document.querySelector(".add-task-modal");
+    modalContainer.style.display = "block";
+  };
+
+  const closeTaskModal = () => {
+    const modalContainer = document.querySelector(".add-task-modal");
+    document
+      .querySelector(".close-add-task-modal")
+      .addEventListener("click", () => (modalContainer.style.display = "none"));
   };
 
   const taskForm = () => {
     // create the form to be submitted in the taskModal
-  };
-
-  const pageActions = () => {
-    openAddTask();
   };
 
   const renderPage = (infoObj) => {
@@ -85,6 +98,7 @@ const renderDomContent = () => {
   const showPageOnLoad = (infoObj) => {
     mainContentContainer.innerHTML = "";
     addTaskHeader(infoObj.headerText);
+    addTaskButtonOpenModal();
   };
 
   const showCorrectPage = (infoObj) => {
